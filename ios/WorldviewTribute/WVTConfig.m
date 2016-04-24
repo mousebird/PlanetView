@@ -77,6 +77,7 @@
     self = [super initWithDict:dict config:config];
     _name = inName;
     _title = dict[@"title"];
+    _subtitle = dict[@"subtitle"];
     NSString *group = dict[@"group"];
     _baseLayer = [group isEqualToString:@"baselayers"];
     

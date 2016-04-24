@@ -25,6 +25,7 @@
 
 @property (readonly) NSString *name;
 @property (readonly) NSString *title;
+@property (readonly) NSString *subtitle;
 /// Set if this is one of the base layers.  Off for overlays.
 @property (readonly) bool baseLayer;
 /// Set from the layerOrder

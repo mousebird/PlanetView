@@ -86,7 +86,7 @@
 // Can't load the geographic data sets quite right at the moment
 static const bool UseSphericalMercatorHack = true;
 
-- (MaplyRemoteTileSource *)buildTileSource
+- (MaplyRemoteTileSource *)buildTileSource:(NSString *)dateString
 {
 // https://map1c.vis.earthdata.nasa.gov/wmts-geo/wmts.cgi?TIME=2016-04-23&layer=MODIS_Terra_CorrectedReflectance_TrueColor&tilematrixset=EPSG4326_250m&Service=WMTS&Request=GetTile&Version=1.0.0&Format=image%2Fjpeg&TileMatrix=2&TileCol=1&TileRow=1
 // https://map1b.vis.earthdata.nasa.gov/wmts-geo/wmts.cgi/TIME=2016-04-23&layer=MODIS_Terra_CorrectedReflectance_TrueColor&tilematrixset=EPSG4326_250m&Service=WMTS&Request=GetTile&Version=1.0.0&Format=image%2Fjpeg&TileMatrix=2&TileCol=1&TileRow=1
@@ -129,12 +129,12 @@ static const bool UseSphericalMercatorHack = true;
     WVTMatrixSet *matrixSet = [source findMatrixSet:matrixSetName];
     
     MaplyRemoteTileSource *tileSource = nil;
-    NSString *timeStr = @"2016-04-22";
+//    NSString *timeStr = @"2016-04-22";
     if (UseSphericalMercatorHack)
     {
         // Translate from the geographic version to the spherical mercator version (sort of)
         NSString *matrixSetSubst = [NSString stringWithFormat:@"GoogleMapsCompatible_Level%d",matrixSet.maxZoom];
-        NSString *baseURL = [NSString stringWithFormat:@"http://map1.vis.earthdata.nasa.gov/wmts-webmerc/%@/default/%@/%@/{z}/{y}/{x}",self.name,timeStr,matrixSetSubst];
+        NSString *baseURL = [NSString stringWithFormat:@"http://map1.vis.earthdata.nasa.gov/wmts-webmerc/%@/default/%@/%@/{z}/{y}/{x}",self.name,dateString,matrixSetSubst];
         
         tileSource = [[MaplyRemoteTileSource alloc] initWithBaseURL:baseURL ext:ext minZoom:0 maxZoom:matrixSet.maxZoom];
     } else {    
@@ -151,7 +151,7 @@ static const bool UseSphericalMercatorHack = true;
         validBbox.ur = MaplyCoordinateMakeWithDegrees(180, 90);
         
         // From this we can construct a remote tile info and the tile source
-        NSString *baseURL = [NSString stringWithFormat:@"https:%@?TIME=%@&layer=%@&tilematrixset=%@&Service=WMTS&Request=GetTile&Version=1.0.0&Format=%@&TileMatrix={z}&TileCol={x}&TileRow={y}",timeStr,source.url,self.name,matrixSet.name,[format stringByReplacingOccurrencesOfString:@"/" withString:@"%2F"]];
+        NSString *baseURL = [NSString stringWithFormat:@"https:%@?TIME=%@&layer=%@&tilematrixset=%@&Service=WMTS&Request=GetTile&Version=1.0.0&Format=%@&TileMatrix={z}&TileCol={x}&TileRow={y}",dateString,source.url,self.name,matrixSet.name,[format stringByReplacingOccurrencesOfString:@"/" withString:@"%2F"]];
 
     //    WMTSTileInfo *tileInfo = [[WMTSTileInfo alloc] initWithBaseURL:baseURL maxZoom:matrixSet.maxZoom];
         WMTSTileInfo *tileInfo = [[WMTSTileInfo alloc] initWithBaseURL:baseURL maxZoom:matrixSet.maxZoom];

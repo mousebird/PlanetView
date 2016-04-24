@@ -46,7 +46,7 @@
     return nil;
 }
 
-- (void)addWVTLayer:(WVTLayer *)layer
+- (void)addWVTLayer:(WVTLayer *)layer forTime:(NSString *)timeStr
 {
     if ([self findLocalLayer:layer])
         return;
@@ -54,7 +54,7 @@
     LocalLayer *localLayer = [[LocalLayer alloc] init];
     localLayer.wvtLayer = layer;
 
-    MaplyRemoteTileSource *tileSource = [layer buildTileSource];
+    MaplyRemoteTileSource *tileSource = [layer buildTileSource:timeStr];
     if (tileSource)
     {
         MaplyQuadImageTilesLayer *wgLayer = [[MaplyQuadImageTilesLayer alloc] initWithTileSource:tileSource];
@@ -76,20 +76,6 @@
     }
     
     [activeLayers addObject:localLayer];
-}
-
-// Look up the layer by name and parse out its various connection info
-- (void)addLayerByName:(NSString *)layerName
-{
-    // Get the layer
-    WVTLayer *layer = [_config findLayer:layerName];
-    if (!layer)
-    {
-        NSLog(@"Failed to find layer %@",layerName);
-        return;
-    }
-    
-    [self addWVTLayer:layer];
 }
 
 - (void)removeWVTLayer:(WVTLayer *)layer

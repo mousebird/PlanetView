@@ -31,7 +31,7 @@
 @property (assign) int drawPriority;
 
 /// Builds an object we can use to page with
-- (MaplyRemoteTileSource *)buildTileSource;
+- (MaplyRemoteTileSource *)buildTileSource:(NSString *)dateString;
 
 @end
 

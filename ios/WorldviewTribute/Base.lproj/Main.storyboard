@@ -41,7 +41,7 @@
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9C-Cs-KVF">
                                                             <rect key="frame" x="0.0" y="17" width="54" height="46"/>
                                                             <state key="normal" image="oval_unselected"/>
-                                                            <state key="selected" image="oval_selected_blue" backgroundImage="oval_selected"/>
+                                                            <state key="selected" image="oval_selected" backgroundImage="oval_selected"/>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dp-ID-Zs1">
                                                             <rect key="frame" x="54" y="17" width="240" height="21"/>
@@ -208,7 +208,7 @@
                                                     <rect key="frame" x="0.0" y="28" width="320" height="35"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sDa-ED-YIe" id="TDR-z8-C8g">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="34.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="35"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5hW-kQ-uCz">
@@ -410,7 +410,6 @@
         <image name="link_icon" width="30" height="30"/>
         <image name="orbit_lines" width="870" height="768"/>
         <image name="oval_selected" width="22" height="22"/>
-        <image name="oval_selected_blue" width="22" height="23"/>
         <image name="oval_unselected" width="22" height="23"/>
         <image name="pointer_line" width="1" height="91"/>
         <image name="settings_icon" width="30" height="30"/>

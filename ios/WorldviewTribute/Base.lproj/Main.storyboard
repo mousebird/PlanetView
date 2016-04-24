@@ -200,17 +200,17 @@
                                             <rect key="frame" x="0.0" y="169" width="320" height="422"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <prototypes>
-                                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="subheader" rowHeight="62" id="sDa-ED-YIe" customClass="SubheaderTableViewCell" customModule="WorldviewTribute" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="28" width="320" height="62"/>
+                                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="subheader" rowHeight="35" id="sDa-ED-YIe" customClass="SubheaderTableViewCell" customModule="WorldviewTribute" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="28" width="320" height="35"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sDa-ED-YIe" id="TDR-z8-C8g">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="61.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="34.5"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5hW-kQ-uCz">
-                                                                <rect key="frame" x="8" y="29" width="42" height="21"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <rect key="frame" x="8" y="13" width="299" height="21"/>
+                                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
+                                                                <color key="textColor" red="0.014963101595640182" green="0.15816113352775574" blue="0.27858108282089233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
@@ -220,7 +220,7 @@
                                                     </connections>
                                                 </tableViewCell>
                                                 <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="layerItem" selectionStyle="default" indentationWidth="10" reuseIdentifier="layerItem1" rowHeight="80" id="Img-KS-ivA" customClass="LayerItemCell" customModule="WorldviewTribute" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="90" width="320" height="80"/>
+                                                    <rect key="frame" x="0.0" y="63" width="320" height="80"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Img-KS-ivA" id="jXK-QC-TdO">
                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>

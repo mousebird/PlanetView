@@ -126,39 +126,42 @@ extension CardsCollectionViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = UITableViewCell()
         
         if indexPath.row == 0 {
-            let acell = tableView.dequeueReusableCellWithIdentifier("subheader", forIndexPath: indexPath) as! SubheaderTableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("subheader", forIndexPath: indexPath) as! SubheaderTableViewCell
             
             //configure stuff
             //Data source needs to include selected/unselected state
             
-            acell.subheaderLabel.text = "Layer Title"
-            acell.backgroundColor = .clearColor()
+            cell.subheaderLabel.text = "Layer Title"
+            cell.backgroundColor = .clearColor()
             
-            cell = acell
+            return cell
         } else {
-            let acell = tableView.dequeueReusableCellWithIdentifier(tvcReuseIdentifier, forIndexPath: indexPath) as! LayerItemCell
+            let cell = tableView.dequeueReusableCellWithIdentifier(tvcReuseIdentifier, forIndexPath: indexPath) as! LayerItemCell
             
             //configure stuff
             //Data source needs to include selected/unselected state
             
-            acell.layerNameLabel.text = "Layer Title"
-            acell.layerDataSourceLabel.text = "SOURCES"
-            acell.backgroundColor = .clearColor()
+            cell.layerNameLabel.text = "Layer Title"
+            cell.layerDataSourceLabel.text = "SOURCES"
+            cell.backgroundColor = .clearColor()
             
-            cell = acell
+            return cell
             
         }
         
-        return cell
+        //return cell
     }
 }
 
 extension CardsCollectionViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 80.0
+        if indexPath.row == 0 {
+            return 35.0
+        } else {
+            return 80.0
+        }
     }
     
     func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {

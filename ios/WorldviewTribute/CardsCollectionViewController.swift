@@ -70,6 +70,7 @@ class CardsCollectionViewController: UICollectionViewController {
         let card = cards[indexPath.row] as! WVTCard
         cell.card = card.makeDisplayCard()
         cell.cardCategoryLabel.text = card.title
+        cell.reset()
         if (card.imageName != nil)
         {
             let imageName = card.imageName

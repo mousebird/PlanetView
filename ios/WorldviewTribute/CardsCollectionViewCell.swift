@@ -17,6 +17,10 @@ class CardsCollectionViewCell: UICollectionViewCell, UITableViewDelegate, UITabl
 
     var card = WVTDisplayCard()
     
+    func reset() {
+        cardTableView.reloadData()
+    }
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return card.displayMeasures.count
     }
@@ -28,8 +32,20 @@ class CardsCollectionViewCell: UICollectionViewCell, UITableViewDelegate, UITabl
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let measurement = card.displayMeasures[indexPath.section] as! WVTDisplayMeasurement
-        let entry = measurement.sourcesAndLayers[indexPath.row]
+        let section = indexPath.section
+        let measurement = card.displayMeasures[section] as! WVTDisplayMeasurement
+        let row = indexPath.row
+        if (row >= measurement.sourcesAndLayers.count)
+        {
+            // Note: This shouldn't happen
+            let cell = tableView.dequeueReusableCellWithIdentifier("subheader", forIndexPath: indexPath) as! SubheaderTableViewCell
+            
+            cell.subheaderLabel.text = "Error"
+            cell.backgroundColor = .clearColor()
+
+            return cell;
+        }
+        let entry = measurement.sourcesAndLayers[row]
         
         if (entry.isKindOfClass(WVTMeasurementSource))
         {
@@ -62,7 +78,14 @@ class CardsCollectionViewCell: UICollectionViewCell, UITableViewDelegate, UITabl
 
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let measurement = card.displayMeasures[indexPath.section] as! WVTDisplayMeasurement
-        let entry = measurement.sourcesAndLayers[indexPath.row]
+        let row = indexPath.row
+        
+        // Note: Why does this happen?
+        if (row >= measurement.sourcesAndLayers.count)
+        {
+            return 0.0;
+        }
+        let entry = measurement.sourcesAndLayers[row]
 
         if (entry.isKindOfClass(WVTMeasurementSource))
         {

@@ -149,9 +149,10 @@ extension LayerManagerViewController: UITableViewDataSource {
         } else {
             layers = layerManage.getLayers(false)
         }
-        let layer = layers[indexPath.row]
+        let layer = layers[indexPath.row] as! WVTLayer
         
         let cell = tableView.dequeueReusableCellWithIdentifier("layerItem") as! LayerItemCell
+        cell.layerItemVisibilityButton.selected = layer.isDisplayed
         
         //configure stuff
         //Data source needs to include selected/unselected state
@@ -172,7 +173,26 @@ extension LayerManagerViewController: UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //Update data source with selected state change.
+        let layerManage = LayerManager.sharedLayerManager(globeViewC,config: config) as LayerManager
+        
+        var layers = NSArray()
+        if (indexPath.section == 0)
+        {
+            layers = layerManage.getLayers(true);
+        } else {
+            layers = layerManage.getLayers(false);
+        }
+        
+        if (indexPath.row < layers.count)
+        {
+            let layer = layers[Int(indexPath.row)] as! WVTLayer
+            if (layer.isDisplayed)
+            {
+                layerManage.disableLayer(layer)
+            } else {
+                layerManage.enableLayer(layer)
+            }
+        }
         
         tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
     }
@@ -192,5 +212,6 @@ extension LayerManagerViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 35.0
     }
+    
     
 }

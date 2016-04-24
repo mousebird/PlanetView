@@ -243,6 +243,22 @@ static const bool UseSphericalMercatorHack = true;
     return self;
 }
 
+- (NSArray *)allLayers
+{
+    NSMutableSet *layers = [NSMutableSet set];
+    
+    for (WVTMeasurement *measure in _measurements)
+    {
+        for (WVTMeasurementSource *source in measure.sources)
+        {
+            for (WVTLayer *layer in source.layers)
+                [layers addObject:layer];
+        }
+    }
+    
+    return [layers allObjects];
+}
+
 @end
 
 @implementation WVTConfig
@@ -288,6 +304,18 @@ static const bool UseSphericalMercatorHack = true;
         NSDictionary *layerDict = layersDict[key];
         WVTLayer *layer = [[WVTLayer alloc] initWithDict:layerDict name:key config:self];
         layers[key] = layer;
+    }
+    
+    // Assign the layers a drawPriority
+    NSArray *layerOrder = mainDict[@"layerOrder"];
+    int which = 0;
+    for (NSString *layerName in layerOrder)
+    {
+        WVTLayer *layer = layers[layerName];
+        if (layer)
+            layer.drawPriority = which;
+
+        which++;
     }
     
     // Process the measurements

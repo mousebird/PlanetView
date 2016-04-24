@@ -17,4 +17,10 @@
 // Add a layer by its name in the Worldview config
 - (void)addLayerByName:(NSString *)layerName;
 
+// Add a specific layer definition
+- (void)addWVTLayer:(WVTLayer *)layer;
+
+// Remove a specific layer
+- (void)removeWVTLayer:(WVTLayer *)layer;
+
 @end

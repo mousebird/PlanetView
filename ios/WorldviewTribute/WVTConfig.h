@@ -27,6 +27,8 @@
 @property (readonly) NSString *title;
 /// Set if this is one of the base layers.  Off for overlays.
 @property (readonly) bool baseLayer;
+/// Set from the layerOrder
+@property (assign) int drawPriority;
 
 /// Builds an object we can use to page with
 - (MaplyRemoteTileSource *)buildTileSource;
@@ -80,6 +82,9 @@
 @property (readonly) NSString *title;
 @property (readonly) NSString *imageName;
 @property NSArray *measurements;
+
+// Return all the layers for this card
+- (NSArray *)allLayers;
 
 @end
 

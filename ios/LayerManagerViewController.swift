@@ -100,6 +100,12 @@ class LayerManagerViewController: UIViewController {
     dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBAction func onRightDatePickerButtonPressed(sender: AnyObject) {
+        
+    }
+    
+    @IBAction func onLeftDatePickerButtonPressed(sender: AnyObject) {
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let backItem = UIBarButtonItem()

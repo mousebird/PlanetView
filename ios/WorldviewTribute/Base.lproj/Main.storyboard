@@ -38,7 +38,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9C-Cs-KVF">
+                                                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9C-Cs-KVF">
                                                             <rect key="frame" x="0.0" y="17" width="54" height="46"/>
                                                             <state key="normal" image="oval_unselected"/>
                                                             <state key="selected" image="oval_selected"/>
@@ -96,10 +96,16 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRZ-Aa-bEq">
                                         <rect key="frame" x="276" y="56" width="44" height="42"/>
                                         <state key="normal" image="caret_right"/>
+                                        <connections>
+                                            <action selector="onRightDatePickerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rkk-y8-IwA"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GcZ-jK-ser">
                                         <rect key="frame" x="0.0" y="56" width="44" height="42"/>
                                         <state key="normal" image="caret_left"/>
+                                        <connections>
+                                            <action selector="onLeftDatePickerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E2A-Cz-Jwn"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="APR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eB8-kx-Lla">
                                         <rect key="frame" x="144" y="65" width="60" height="25"/>
@@ -231,7 +237,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i54-QW-xy8">
+                                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i54-QW-xy8">
                                                                 <rect key="frame" x="0.0" y="17" width="54" height="46"/>
                                                                 <state key="normal" image="oval_unselected"/>
                                                                 <state key="selected" image="oval_selected"/>

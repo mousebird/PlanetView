@@ -23,7 +23,7 @@
 - (id)initWithGlobe:(GlobeViewController *)globeViewC config:(WVTConfig *)config;
 
 // Get or set the date
-- (void)setDate:(NSDate *)date;
+- (void)setDate:(SimpleDate *)date;
 - (SimpleDate *)getDate;
 
 // Add a layer to be displayed

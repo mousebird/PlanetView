@@ -66,6 +66,18 @@ class LayerManagerViewController: UIViewController {
         
         // Add some defaults to get started
         self.addDefaults()
+        
+        updateDateDisplay()
+    }
+    
+    func updateDateDisplay()
+    {
+        let layerManage = LayerManager.sharedLayerManager(globeViewC,config: config) as LayerManager
+        let date = layerManage.getDate()
+        
+        yearLabel.text = NSString.init(format: "%d", date.year) as String
+        monthLabel.text = NSString.init(format: "%02d", date.month) as String
+        dayLabel.text = NSString.init(format: "%02d", date.day) as String
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -101,10 +113,23 @@ class LayerManagerViewController: UIViewController {
     }
     
     @IBAction func onRightDatePickerButtonPressed(sender: AnyObject) {
+        let layerManage = LayerManager.sharedLayerManager(globeViewC,config: config) as LayerManager
         
+        let curDate = layerManage.getDate()
+        let nextDate = curDate.nextDay()
+        layerManage.setDate(nextDate)
+
+        updateDateDisplay()
     }
     
     @IBAction func onLeftDatePickerButtonPressed(sender: AnyObject) {
+        let layerManage = LayerManager.sharedLayerManager(globeViewC,config: config) as LayerManager
+        
+        let curDate = layerManage.getDate()
+        let prevDate = curDate.previousDay()
+        layerManage.setDate(prevDate)
+        
+        updateDateDisplay()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -122,7 +147,6 @@ class LayerManagerViewController: UIViewController {
     func addDefaults() {
         let layerManage = LayerManager.sharedLayerManager(globeViewC,config: config) as LayerManager
 
-//        let timeStr = "2016-04-20"
         let reflectLayer = config.findLayer("VIIRS_SNPP_CorrectedReflectance_BandsM11-I2-I1")
         layerManage.addLayer(reflectLayer)
         let dustLayer = config.findLayer("AIRS_Dust_Score")

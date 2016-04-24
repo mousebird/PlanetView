@@ -109,6 +109,10 @@ extension CardsCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
         return sectionInsets
     }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return 24.0
+    }
 }
 
 
@@ -122,22 +126,42 @@ extension CardsCollectionViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(tvcReuseIdentifier, forIndexPath: indexPath) as! LayerItemCell
         
-        //configure stuff
-        //Data source needs to include selected/unselected state
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCellWithIdentifier("subheader", forIndexPath: indexPath) as! SubheaderTableViewCell
+            
+            //configure stuff
+            //Data source needs to include selected/unselected state
+            
+            cell.subheaderLabel.text = "Layer Title"
+            cell.backgroundColor = .clearColor()
+            
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCellWithIdentifier(tvcReuseIdentifier, forIndexPath: indexPath) as! LayerItemCell
+            
+            //configure stuff
+            //Data source needs to include selected/unselected state
+            
+            cell.layerNameLabel.text = "Layer Title"
+            cell.layerDataSourceLabel.text = "SOURCES"
+            cell.backgroundColor = .clearColor()
+            
+            return cell
+            
+        }
         
-        cell.layerNameLabel.text = "Layer Title"
-        cell.layerDataSourceLabel.text = "SOURCES"
-        cell.backgroundColor = .clearColor()
-        
-        return cell
+        //return cell
     }
 }
 
 extension CardsCollectionViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 80.0
+        if indexPath.row == 0 {
+            return 35.0
+        } else {
+            return 80.0
+        }
     }
     
     func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {

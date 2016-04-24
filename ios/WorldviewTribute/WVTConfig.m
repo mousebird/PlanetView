@@ -227,6 +227,9 @@ static const bool UseSphericalMercatorHack = true;
     _title = dict[@"title"];
     _imageName = dict[@"image"];
     
+    if (_imageName)
+        NSLog(@"%@",_imageName);
+    
     // Look up the measurements
     NSArray *measuresDict = dict[@"measurements"];
     NSMutableArray *measures = [NSMutableArray array];
@@ -261,6 +264,9 @@ static const bool UseSphericalMercatorHack = true;
 
 @end
 
+// Note: Make this a proper singleton
+static WVTConfig *staticConfig = NULL;
+
 @implementation WVTConfig
 {
     NSDictionary *mainDict;
@@ -270,8 +276,16 @@ static const bool UseSphericalMercatorHack = true;
     NSMutableDictionary *cats;
 }
 
+- (id)init
+{
+    return staticConfig;
+}
+
 - (id)initWithFile:(NSString *)fname
 {
+    if (staticConfig)
+        return staticConfig;
+    
     self = [super init];
     
     NSData *data = [NSData dataWithContentsOfFile:fname];
@@ -348,6 +362,7 @@ static const bool UseSphericalMercatorHack = true;
         cats[key] = cards;
     }
     
+    staticConfig = self;
     
     return self;
 }
@@ -373,6 +388,18 @@ static const bool UseSphericalMercatorHack = true;
 - (NSArray *)findCardsForCategory:(NSString *)category
 {
     return cats[category];
+}
+
+// Return the number of categories
+- (int)getNumCategories
+{
+    return [cats count];
+}
+
+// Return the Nth category
+- (NSArray *)cardsForNthCategory:(int)catID
+{
+    return cats.allValues[catID];
 }
 
 @end

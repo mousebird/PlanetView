@@ -108,4 +108,10 @@
 // Look up all the cards for a given category
 - (NSArray *)findCardsForCategory:(NSString *)category;
 
+// Return the number of categories
+- (int)getNumCategories;
+
+// Return the Nth category
+- (NSArray *)cardsForNthCategory:(int)catID;
+
 @end

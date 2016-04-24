@@ -14,6 +14,7 @@ class CardsCollectionViewController: UICollectionViewController {
     
     private let sectionInsets = UIEdgeInsets(top: 50.0, left: 50.0, bottom: 50.0, right: 50.0)
     private let tvcReuseIdentifier = "layerItem1"
+    var config = WVTConfig()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,9 @@ class CardsCollectionViewController: UICollectionViewController {
         //self.collectionView!.registerClass(CardsCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
+        
+        // Get access to the config
+        config = WVTConfig.init()
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,14 +49,12 @@ class CardsCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 2
+        return Int(config.getNumCategories())
     }
 
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 4
+        return config.cardsForNthCategory(Int32(section)).count
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -63,6 +65,16 @@ class CardsCollectionViewController: UICollectionViewController {
         cell.layer.cornerRadius = 10
         cell.cardTableView.delegate = self
         cell.cardTableView.dataSource = self
+        
+        let cards = config.cardsForNthCategory(Int32(indexPath.section))
+        let card = cards[indexPath.row] as! WVTCard
+        cell.cardCategoryLabel.text = card.title
+        if (card.imageName != nil)
+        {
+            let imageName = card.imageName
+            let image = UIImage.init(named: imageName)
+            cell.cardImageView.image = image
+        }
         
         return cell
     }

@@ -8,14 +8,26 @@
 
 #import "GlobeViewController.h"
 
+@interface LocalLayer : NSObject
+@property MaplyQuadImageTilesLayer *wgLayer;
+@property WVTLayer *wvtLayer;
+@end
+
+@implementation LocalLayer
+@end
+
 @interface GlobeViewController ()
 
 @end
 
 @implementation GlobeViewController
+{
+    NSMutableArray *activeLayers;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    activeLayers = [NSMutableArray array];
     
     self.keepNorthUp = true;
     
@@ -23,18 +35,26 @@
     [self animateToPosition:MaplyCoordinateMakeWithDegrees(-122.416667, 37.783333) time:1.0];
 }
 
-// Look up the layer by name and parse out its various connection info
-- (void)addLayerByName:(NSString *)layerName
+- (LocalLayer *)findLocalLayer:(WVTLayer *)wvtLayer
 {
-    // Get the layer
-    WVTLayer *layer = [_config findLayer:layerName];
-    if (!layer)
+    for (LocalLayer *layer in activeLayers)
     {
-        NSLog(@"Failed to find layer %@",layerName);
-        return;
+        if (layer.wvtLayer == wvtLayer)
+            return layer;
     }
     
-    MaplyRemoteTileSource *tileSource = [layer buildTileSource];
+    return nil;
+}
+
+- (void)addWVTLayer:(WVTLayer *)layer forTime:(NSString *)timeStr
+{
+    if ([self findLocalLayer:layer])
+        return;
+    
+    LocalLayer *localLayer = [[LocalLayer alloc] init];
+    localLayer.wvtLayer = layer;
+
+    MaplyRemoteTileSource *tileSource = [layer buildTileSource:timeStr];
     if (tileSource)
     {
         MaplyQuadImageTilesLayer *wgLayer = [[MaplyQuadImageTilesLayer alloc] initWithTileSource:tileSource];
@@ -47,10 +67,24 @@
             wgLayer.coverPoles = false;
             wgLayer.handleEdges = false;
         }
+        wgLayer.drawPriority = layer.drawPriority*100;
+        localLayer.wgLayer = wgLayer;
         [self addLayer:wgLayer];
     } else {
-        NSLog(@"Failed to build tile source for layer %@",layerName);
+        NSLog(@"Failed to build tile source for layer %@",layer.name);
         return;
+    }
+    
+    [activeLayers addObject:localLayer];
+}
+
+- (void)removeWVTLayer:(WVTLayer *)layer
+{
+    LocalLayer *localLayer = [self findLocalLayer:layer];
+    if (localLayer)
+    {
+        [self removeLayer:localLayer.wgLayer];
+        [activeLayers removeObject:localLayer];
     }
 }
 

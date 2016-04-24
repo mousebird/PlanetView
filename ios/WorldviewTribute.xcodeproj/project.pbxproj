@@ -18,6 +18,24 @@
 		2B965EF61CCBFD93005B63DB /* WVTConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B965EF51CCBFD93005B63DB /* WVTConfig.m */; };
 		2B965EF91CCBFEB3005B63DB /* wv.json in Resources */ = {isa = PBXBuildFile; fileRef = 2B965EF81CCBFEB3005B63DB /* wv.json */; };
 		2B965EFC1CCC2628005B63DB /* WMTSTileInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B965EFB1CCC2628005B63DB /* WMTSTileInfo.m */; };
+		2B965F051CCD3187005B63DB /* human-dimensions.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2B965EFD1CCD3187005B63DB /* human-dimensions.jpg */; };
+		2B965F061CCD3187005B63DB /* atmosphere.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2B965EFE1CCD3187005B63DB /* atmosphere.jpg */; };
+		2B965F071CCD3187005B63DB /* land-surface.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2B965EFF1CCD3187005B63DB /* land-surface.jpg */; };
+		2B965F081CCD3187005B63DB /* oceans.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2B965F001CCD3187005B63DB /* oceans.jpg */; };
+		2B965F091CCD3187005B63DB /* biosphere.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2B965F011CCD3187005B63DB /* biosphere.jpg */; };
+		2B965F0A1CCD3187005B63DB /* spectral-engineering.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B965F021CCD3187005B63DB /* spectral-engineering.png */; };
+		2B965F0B1CCD3187005B63DB /* cryosphere.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2B965F031CCD3187005B63DB /* cryosphere.jpg */; };
+		2B965F0C1CCD3187005B63DB /* terrestrial-hydrosphere.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2B965F041CCD3187005B63DB /* terrestrial-hydrosphere.jpg */; };
+		2B965F171CCD3414005B63DB /* ash-plumes.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2B965F0D1CCD3414005B63DB /* ash-plumes.jpg */; };
+		2B965F181CCD3414005B63DB /* dust-storms.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2B965F0E1CCD3414005B63DB /* dust-storms.jpg */; };
+		2B965F191CCD3414005B63DB /* shipping.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2B965F0F1CCD3414005B63DB /* shipping.jpg */; };
+		2B965F1A1CCD3414005B63DB /* vegetation.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2B965F101CCD3414005B63DB /* vegetation.jpg */; };
+		2B965F1B1CCD3414005B63DB /* drought.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2B965F111CCD3414005B63DB /* drought.jpg */; };
+		2B965F1C1CCD3414005B63DB /* fires.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2B965F121CCD3414005B63DB /* fires.jpg */; };
+		2B965F1D1CCD3414005B63DB /* floods.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2B965F131CCD3414005B63DB /* floods.jpg */; };
+		2B965F1E1CCD3414005B63DB /* air-quality.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2B965F141CCD3414005B63DB /* air-quality.jpg */; };
+		2B965F1F1CCD3414005B63DB /* smoke-plumes.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2B965F151CCD3414005B63DB /* smoke-plumes.jpg */; };
+		2B965F201CCD3414005B63DB /* severe-storms.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2B965F161CCD3414005B63DB /* severe-storms.jpg */; };
 		6C632D851CCC5A0C00FD282A /* LayerManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C632D841CCC5A0C00FD282A /* LayerManagerViewController.swift */; };
 		6C632D871CCC683800FD282A /* Spring in Resources */ = {isa = PBXBuildFile; fileRef = 6C632D861CCC683800FD282A /* Spring */; };
 		6C632D891CCC689A00FD282A /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C632D881CCC689A00FD282A /* BlurView.swift */; };
@@ -68,6 +86,24 @@
 		2B965EF81CCBFEB3005B63DB /* wv.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = wv.json; path = config/wv.json; sourceTree = SOURCE_ROOT; };
 		2B965EFA1CCC2628005B63DB /* WMTSTileInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMTSTileInfo.h; sourceTree = "<group>"; };
 		2B965EFB1CCC2628005B63DB /* WMTSTileInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMTSTileInfo.m; sourceTree = "<group>"; };
+		2B965EFD1CCD3187005B63DB /* human-dimensions.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "human-dimensions.jpg"; path = "config/human-dimensions.jpg"; sourceTree = SOURCE_ROOT; };
+		2B965EFE1CCD3187005B63DB /* atmosphere.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = atmosphere.jpg; path = config/atmosphere.jpg; sourceTree = SOURCE_ROOT; };
+		2B965EFF1CCD3187005B63DB /* land-surface.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "land-surface.jpg"; path = "config/land-surface.jpg"; sourceTree = SOURCE_ROOT; };
+		2B965F001CCD3187005B63DB /* oceans.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = oceans.jpg; path = config/oceans.jpg; sourceTree = SOURCE_ROOT; };
+		2B965F011CCD3187005B63DB /* biosphere.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = biosphere.jpg; path = config/biosphere.jpg; sourceTree = SOURCE_ROOT; };
+		2B965F021CCD3187005B63DB /* spectral-engineering.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "spectral-engineering.png"; path = "config/spectral-engineering.png"; sourceTree = SOURCE_ROOT; };
+		2B965F031CCD3187005B63DB /* cryosphere.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cryosphere.jpg; path = config/cryosphere.jpg; sourceTree = SOURCE_ROOT; };
+		2B965F041CCD3187005B63DB /* terrestrial-hydrosphere.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "terrestrial-hydrosphere.jpg"; path = "config/terrestrial-hydrosphere.jpg"; sourceTree = SOURCE_ROOT; };
+		2B965F0D1CCD3414005B63DB /* ash-plumes.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "ash-plumes.jpg"; path = "config/ash-plumes.jpg"; sourceTree = SOURCE_ROOT; };
+		2B965F0E1CCD3414005B63DB /* dust-storms.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "dust-storms.jpg"; path = "config/dust-storms.jpg"; sourceTree = SOURCE_ROOT; };
+		2B965F0F1CCD3414005B63DB /* shipping.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = shipping.jpg; path = config/shipping.jpg; sourceTree = SOURCE_ROOT; };
+		2B965F101CCD3414005B63DB /* vegetation.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = vegetation.jpg; path = config/vegetation.jpg; sourceTree = SOURCE_ROOT; };
+		2B965F111CCD3414005B63DB /* drought.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = drought.jpg; path = config/drought.jpg; sourceTree = SOURCE_ROOT; };
+		2B965F121CCD3414005B63DB /* fires.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = fires.jpg; path = config/fires.jpg; sourceTree = SOURCE_ROOT; };
+		2B965F131CCD3414005B63DB /* floods.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = floods.jpg; path = config/floods.jpg; sourceTree = SOURCE_ROOT; };
+		2B965F141CCD3414005B63DB /* air-quality.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "air-quality.jpg"; path = "config/air-quality.jpg"; sourceTree = SOURCE_ROOT; };
+		2B965F151CCD3414005B63DB /* smoke-plumes.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "smoke-plumes.jpg"; path = "config/smoke-plumes.jpg"; sourceTree = SOURCE_ROOT; };
+		2B965F161CCD3414005B63DB /* severe-storms.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "severe-storms.jpg"; path = "config/severe-storms.jpg"; sourceTree = SOURCE_ROOT; };
 		6C632D841CCC5A0C00FD282A /* LayerManagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LayerManagerViewController.swift; path = ../LayerManagerViewController.swift; sourceTree = "<group>"; };
 		6C632D861CCC683800FD282A /* Spring */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Spring; sourceTree = "<group>"; };
 		6C632D881CCC689A00FD282A /* BlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlurView.swift; path = Spring/BlurView.swift; sourceTree = "<group>"; };
@@ -186,6 +222,24 @@
 		2B965EF71CCBFEA7005B63DB /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				2B965F0D1CCD3414005B63DB /* ash-plumes.jpg */,
+				2B965F0E1CCD3414005B63DB /* dust-storms.jpg */,
+				2B965F0F1CCD3414005B63DB /* shipping.jpg */,
+				2B965F101CCD3414005B63DB /* vegetation.jpg */,
+				2B965F111CCD3414005B63DB /* drought.jpg */,
+				2B965F121CCD3414005B63DB /* fires.jpg */,
+				2B965F131CCD3414005B63DB /* floods.jpg */,
+				2B965F141CCD3414005B63DB /* air-quality.jpg */,
+				2B965F151CCD3414005B63DB /* smoke-plumes.jpg */,
+				2B965F161CCD3414005B63DB /* severe-storms.jpg */,
+				2B965EFD1CCD3187005B63DB /* human-dimensions.jpg */,
+				2B965EFE1CCD3187005B63DB /* atmosphere.jpg */,
+				2B965EFF1CCD3187005B63DB /* land-surface.jpg */,
+				2B965F001CCD3187005B63DB /* oceans.jpg */,
+				2B965F011CCD3187005B63DB /* biosphere.jpg */,
+				2B965F021CCD3187005B63DB /* spectral-engineering.png */,
+				2B965F031CCD3187005B63DB /* cryosphere.jpg */,
+				2B965F041CCD3187005B63DB /* terrestrial-hydrosphere.jpg */,
 				2B965EF81CCBFEB3005B63DB /* wv.json */,
 			);
 			name = Config;
@@ -297,7 +351,7 @@
 				TargetAttributes = {
 					2B965EB81CCBF37B005B63DB = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 2CQJ4ESN4E;
+						DevelopmentTeam = BFXSGS6V8N;
 					};
 					2B965ED11CCBF37B005B63DB = {
 						CreatedOnToolsVersion = 7.3;
@@ -335,10 +389,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C632D871CCC683800FD282A /* Spring in Resources */,
+				2B965F1C1CCD3414005B63DB /* fires.jpg in Resources */,
 				2B965EF91CCBFEB3005B63DB /* wv.json in Resources */,
+				2B965F081CCD3187005B63DB /* oceans.jpg in Resources */,
+				2B965F061CCD3187005B63DB /* atmosphere.jpg in Resources */,
 				2B965ECC1CCBF37B005B63DB /* LaunchScreen.storyboard in Resources */,
+				2B965F071CCD3187005B63DB /* land-surface.jpg in Resources */,
+				2B965F1F1CCD3414005B63DB /* smoke-plumes.jpg in Resources */,
 				2B965EC91CCBF37B005B63DB /* Assets.xcassets in Resources */,
+				2B965F201CCD3414005B63DB /* severe-storms.jpg in Resources */,
+				2B965F1D1CCD3414005B63DB /* floods.jpg in Resources */,
+				2B965F0A1CCD3187005B63DB /* spectral-engineering.png in Resources */,
+				2B965F181CCD3414005B63DB /* dust-storms.jpg in Resources */,
+				2B965F1E1CCD3414005B63DB /* air-quality.jpg in Resources */,
+				2B965F1B1CCD3414005B63DB /* drought.jpg in Resources */,
+				2B965F0C1CCD3187005B63DB /* terrestrial-hydrosphere.jpg in Resources */,
+				2B965F1A1CCD3414005B63DB /* vegetation.jpg in Resources */,
+				2B965F051CCD3187005B63DB /* human-dimensions.jpg in Resources */,
+				2B965F0B1CCD3187005B63DB /* cryosphere.jpg in Resources */,
 				2B965EC71CCBF37B005B63DB /* Main.storyboard in Resources */,
+				2B965F191CCD3414005B63DB /* shipping.jpg in Resources */,
+				2B965F171CCD3414005B63DB /* ash-plumes.jpg in Resources */,
+				2B965F091CCD3187005B63DB /* biosphere.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

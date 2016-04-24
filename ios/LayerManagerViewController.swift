@@ -108,10 +108,11 @@ class LayerManagerViewController: UIViewController {
     }
     
     func testAdding() {
-        globeViewC.addLayerByName("VIIRS_SNPP_CorrectedReflectance_BandsM11-I2-I1")
-        //globeViewC.addLayerByName("MODIS_Terra_CorrectedReflectance_TrueColor")
-        globeViewC.addLayerByName("AIRS_Dust_Score")
-        //globeViewC.addLayerByName("MODIS_Terra_Aerosol")
+        let timeStr = "2016-04-20"
+        let reflectLayer = config.findLayer("VIIRS_SNPP_CorrectedReflectance_BandsM11-I2-I1")
+        globeViewC.addWVTLayer(reflectLayer, forTime:timeStr)
+        let dustLayer = config.findLayer("AIRS_Dust_Score")
+        globeViewC.addWVTLayer(dustLayer, forTime:timeStr)
     }
     
     

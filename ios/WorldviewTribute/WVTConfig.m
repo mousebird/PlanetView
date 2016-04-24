@@ -219,6 +219,48 @@ static const bool UseSphericalMercatorHack = true;
 
 @end
 
+@implementation WVTDisplayMeasurement
+
+- (id)initWithMeasurement:(WVTMeasurement *)measure
+{
+    self = [super init];
+    _measure = measure;
+
+    NSMutableArray *sourcesAndLayers = [NSMutableArray array];
+    for (WVTMeasurementSource *source in measure.sources)
+    {
+        [sourcesAndLayers addObject:source];
+        for (WVTLayer *layer in source.layers)
+            [sourcesAndLayers addObject:layer];
+    }
+    _sourcesAndLayers = sourcesAndLayers;
+    
+    return self;
+}
+
+@end
+
+@implementation WVTDisplayCard
+
+- (id)initWithCard:(WVTCard *)card
+{
+    self = [super init];
+    _card = card;
+    
+    NSMutableArray *measures = [NSMutableArray array];
+    for (WVTMeasurement *measure in card.measurements)
+    {
+        WVTDisplayMeasurement *newMeasure = [[WVTDisplayMeasurement alloc] initWithMeasurement:measure];
+        [measures addObject:newMeasure];
+    }
+    
+    _displayMeasures = measures;
+    
+    return self;
+}
+
+@end
+
 @implementation WVTCard
 
 - (id)initWithDict:(NSDictionary *)dict name:(NSString *)inName config:(WVTConfig *)config
@@ -261,6 +303,12 @@ static const bool UseSphericalMercatorHack = true;
     }
     
     return [layers allObjects];
+}
+
+- (WVTDisplayCard *)makeDisplayCard
+{
+    WVTDisplayCard *displayCard = [[WVTDisplayCard alloc] initWithCard:self];
+    return displayCard;
 }
 
 @end
@@ -392,7 +440,7 @@ static WVTConfig *staticConfig = NULL;
 }
 
 // Return the number of categories
-- (int)getNumCategories
+- (NSUInteger)getNumCategories
 {
     return [cats count];
 }

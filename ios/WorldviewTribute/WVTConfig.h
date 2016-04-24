@@ -11,6 +11,7 @@
 
 @class WVTConfig;
 @class WVTMatrixSet;
+@class WVTDisplayCard;
 
 // All the various config objects are derived from dictionaries
 @interface WVTObject : NSObject
@@ -87,6 +88,30 @@
 // Return all the layers for this card
 - (NSArray *)allLayers;
 
+// Build a displayable version of the card with sources and layers flattened
+- (WVTDisplayCard *)makeDisplayCard;
+
+@end
+
+// Display version of measurement objects
+@interface WVTDisplayMeasurement : NSObject
+
+// Original measurement
+@property (readonly) WVTMeasurement *measure;
+
+// Sources interleaved with their layers
+@property NSArray *sourcesAndLayers;
+
+@end
+
+@interface WVTDisplayCard : NSObject
+
+// Original card
+@property (readonly) WVTCard *card;
+
+// Display version of measurements
+@property NSArray *displayMeasures;
+
 @end
 
 /** WorldView-Tribute Config file.
@@ -110,7 +135,7 @@
 - (NSArray *)findCardsForCategory:(NSString *)category;
 
 // Return the number of categories
-- (int)getNumCategories;
+- (NSUInteger)getNumCategories;
 
 // Return the Nth category
 - (NSArray *)cardsForNthCategory:(int)catID;

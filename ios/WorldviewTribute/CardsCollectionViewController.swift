@@ -68,7 +68,7 @@ class CardsCollectionViewController: UICollectionViewController {
         // Fill in the title and the image from the card
         let cards = config.cardsForNthCategory(Int32(indexPath.section))
         let card = cards[indexPath.row] as! WVTCard
-        cell.card = card
+        cell.card = card.makeDisplayCard()
         cell.cardCategoryLabel.text = card.title
         if (card.imageName != nil)
         {

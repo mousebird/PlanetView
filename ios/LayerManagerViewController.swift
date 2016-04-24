@@ -24,7 +24,6 @@ class LayerManagerViewController: UIViewController {
     
     var globeViewC = GlobeViewController()
     var config = WVTConfig()
-//    var LayerManager = LayerManager()
     
     override func viewDidLoad() {
         
@@ -130,17 +129,35 @@ extension LayerManagerViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        let layerManage = LayerManager.sharedLayerManager(globeViewC,config: config) as LayerManager
+
+        if (section == 0)
+        {
+            return layerManage.getLayers(true).count
+        } else {
+            return layerManage.getLayers(false).count
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let layerManage = LayerManager.sharedLayerManager(globeViewC,config: config) as LayerManager
+
+        var layers = NSArray()
+        if (indexPath.section == 0)
+        {
+            layers = layerManage.getLayers(true)
+        } else {
+            layers = layerManage.getLayers(false)
+        }
+        let layer = layers[indexPath.row]
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("layerItem") as! LayerItemCell
         
         //configure stuff
         //Data source needs to include selected/unselected state
         
-        cell.layerNameLabel.text = "Layer Title"
-        cell.layerDataSourceLabel.text = "SOURCES"
+        cell.layerNameLabel.text = layer.title
+        cell.layerDataSourceLabel.text = layer.subtitle
         cell.backgroundColor = .clearColor()
         
         return cell
@@ -164,7 +181,12 @@ extension LayerManagerViewController: UITableViewDelegate {
         let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView //recast your view as a UITableViewHeaderFooterView
         header.textLabel!.textColor = UIColor(red: 6/255, green: 41/255, blue: 70/255, alpha: 1)
         header.textLabel!.font = UIFont.init(name: "Avenir-Book", size: 12.0)
-        header.textLabel!.text = "OVERLAYS"
+        if (section == 0)
+        {
+            header.textLabel!.text = "Base Layers"
+        } else {
+            header.textLabel!.text = "Overlays"
+        }
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

@@ -76,6 +76,7 @@
 {
     self = [super initWithDict:dict config:config];
     _name = inName;
+    _title = dict[@"title"];
     NSString *group = dict[@"group"];
     _baseLayer = [group isEqualToString:@"baselayers"];
     
@@ -166,11 +167,91 @@ static const bool UseSphericalMercatorHack = true;
 
 @end
 
+@implementation WVTMeasurementSource
+
+- (id)initWithDict:(NSDictionary *)dict name:(NSString *)inName config:(WVTConfig *)config
+{
+    self = [super initWithDict:dict config:config];
+    _name = inName;
+    _title = dict[@"title"];
+    
+    // Look for the layers
+    NSArray *settings = dict[@"settings"];
+    NSMutableArray *layers = [NSMutableArray array];
+    for (NSString *layerName in settings)
+    {
+        WVTLayer *layer = [config findLayer:layerName];
+        if (layer)
+            [layers addObject:layer];
+        else
+            NSLog(@"Can't find layer %@ in WVTMeasurementsource init",layerName);
+    }
+    _layers = layers;
+    
+    return self;
+}
+
+@end
+
+@implementation WVTMeasurement
+
+- (id)initWithDict:(NSDictionary *)dict name:(NSString *)inName config:(WVTConfig *)config
+{
+    self = [super initWithDict:dict config:config];
+    _name = inName;
+    _title = dict[@"title"];
+    _subTitle = dict[@"subtitle"];
+    
+    // Look for all the layers
+    NSMutableArray *sources = [NSMutableArray array];
+    NSDictionary *sourcesDict = dict[@"sources"];
+    for (NSString *key in sourcesDict.allKeys)
+    {
+        NSDictionary *sourceDict = sourcesDict[key];
+        WVTMeasurementSource *source = [[WVTMeasurementSource alloc] initWithDict:sourceDict name:key config:config];
+        [sources addObject:source];
+    }
+    _sources = sources;
+    
+    return self;
+}
+
+@end
+
+@implementation WVTCard
+
+- (id)initWithDict:(NSDictionary *)dict name:(NSString *)inName config:(WVTConfig *)config
+{
+    self = [super initWithDict:dict config:config];
+    _name = inName;
+    _title = dict[@"title"];
+    _imageName = dict[@"image"];
+    
+    // Look up the measurements
+    NSArray *measuresDict = dict[@"measurements"];
+    NSMutableArray *measures = [NSMutableArray array];
+    for (NSString *measureName in measuresDict)
+    {
+        WVTMeasurement *measure = [config findMeasurement:measureName];
+        if (measure)
+            [measures addObject:measure];
+        else
+            NSLog(@"Missing measurement %@ in WVTCard init",measureName);
+    }
+    _measurements = measures;
+    
+    return self;
+}
+
+@end
+
 @implementation WVTConfig
 {
     NSDictionary *mainDict;
-    NSDictionary *layers;
+    NSMutableDictionary *layers;
     NSMutableDictionary *sources;
+    NSMutableDictionary *measures;
+    NSMutableDictionary *cats;
 }
 
 - (id)initWithFile:(NSString *)fname
@@ -186,11 +267,8 @@ static const bool UseSphericalMercatorHack = true;
         NSLog(@"Unable to parse configuration file because:\n%@",error);
         return nil;
     }
-    layers = mainDict[@"layers"];
-    if (!layers)
-        return nil;
-    
-    // Process the sources, which we'll need all of
+
+    // Process the sources
     sources = [NSMutableDictionary dictionary];
     NSDictionary *sourcesDict = mainDict[@"sources"];
     for (NSString *key in sourcesDict.allKeys)
@@ -199,6 +277,49 @@ static const bool UseSphericalMercatorHack = true;
         WVTSource *source = [[WVTSource alloc] initWithDict:sourceDict name:key config:self];
         sources[key] = source;
     }
+
+    // Process the layers
+    NSDictionary *layersDict = mainDict[@"layers"];
+    if (!layersDict)
+        return nil;
+    layers = [NSMutableDictionary dictionary];
+    for (NSString *key in layersDict.allKeys)
+    {
+        NSDictionary *layerDict = layersDict[key];
+        WVTLayer *layer = [[WVTLayer alloc] initWithDict:layerDict name:key config:self];
+        layers[key] = layer;
+    }
+    
+    // Process the measurements
+    NSDictionary *measuresDict = mainDict[@"measurements"];
+    if (!measuresDict)
+        return nil;
+    measures = [NSMutableDictionary dictionary];
+    for (NSString *key in measuresDict.allKeys)
+    {
+        NSDictionary *measureDict = measuresDict[key];
+        WVTMeasurement *measure = [[WVTMeasurement alloc] initWithDict:measureDict name:key config:self];
+        measures[key] = measure;
+    }
+
+    // Work through categories and their cards
+    cats = [NSMutableDictionary dictionary];
+    NSDictionary *catsDict = mainDict[@"categories"];
+    for (NSString *key in catsDict.allKeys)
+    {
+        NSDictionary *catDict = catsDict[key];
+        
+        // Now for the cards
+        NSMutableArray *cards = [NSMutableArray array];
+        for (NSString *catKey in catDict.allKeys)
+        {
+            NSDictionary *cardDict = catDict[catKey];
+            WVTCard *card = [[WVTCard alloc] initWithDict:cardDict name:key config:self];
+            [cards addObject:card];
+        }
+        cats[key] = cards;
+    }
+    
     
     return self;
 }
@@ -206,8 +327,7 @@ static const bool UseSphericalMercatorHack = true;
 // Look up a layer by its name (rather than id)
 - (WVTLayer *)findLayer:(NSString *)name
 {
-    NSDictionary *dict = layers[name];
-    WVTLayer *layer = [[WVTLayer alloc] initWithDict:dict name:name config:self];
+    WVTLayer *layer = layers[name];
     
     return layer;
 }
@@ -215,6 +335,16 @@ static const bool UseSphericalMercatorHack = true;
 - (WVTSource *)findSource:(NSString *)name
 {
     return sources[name];
+}
+
+- (WVTMeasurement *)findMeasurement:(NSString *)name
+{
+    return measures[name];
+}
+
+- (NSArray *)findCardsForCategory:(NSString *)category
+{
+    return cats[category];
 }
 
 @end

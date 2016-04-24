@@ -36,14 +36,26 @@ class LayerManagerViewController: UIViewController {
         self.view.addSubview(datePickerView)
         
         // Style the UI Views
-        insertBlurView(layerManagerView, style: UIBlurEffectStyle.Dark)
-        insertBlurView(datePickerView, style: UIBlurEffectStyle.Dark)
+        insertBlurView(layerManagerView, style: UIBlurEffectStyle.Light)
+        insertBlurView(datePickerView, style: UIBlurEffectStyle.Light)
         layerManagerView.clipsToBounds = true
         datePickerView.clipsToBounds = true
         layerManagerView.layer.cornerRadius = 10
         datePickerView.layer.cornerRadius = 10
         
-        // Style the bar button item
+        //animate in the Layers
+        layerManagerView.transform = CGAffineTransformMakeTranslation(0.0, -800.0)
+        datePickerView.transform = CGAffineTransformMakeTranslation(0.0, -800.0)
+        UIView.animateWithDuration(0.5, delay: 0.6, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.8, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+            self.layerManagerView.transform = CGAffineTransformMakeTranslation(0.0, 0.0)
+            self.datePickerView.transform = CGAffineTransformMakeTranslation(0.0, 0.0)
+            self.layerManagerView.alpha = 1
+            self.datePickerView.alpha = 1
+            }, completion: { (finished: Bool) in
+                //
+        })
+
+        // Style the navigation bar and bar button items
         viewLayersBarButtonItem.setTitleTextAttributes([ NSFontAttributeName:UIFont(name: "Avenir-heavy", size: 14)!], forState: UIControlState.Normal)
         
         // Configuration file for the UI
@@ -78,7 +90,13 @@ class LayerManagerViewController: UIViewController {
         }
     }
     
-    // turn the status bar white
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let backItem = UIBarButtonItem()
+        backItem.title = " "
+        navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed
+    }
+    
+    // hide the status bar
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
     }
@@ -108,14 +126,15 @@ extension LayerManagerViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier("layerItem") as! LayerItemCell
         
         //configure stuff
+        //Data source needs to include selected/unselected state
         
-        cell.layerNameLabel.text = "AAAAAAAAAAA"
+        cell.layerNameLabel.text = "Layer Title"
         cell.layerDataSourceLabel.text = "SOURCES"
         cell.backgroundColor = .clearColor()
         
-        
         return cell
     }
+    
 }
 
 //MARK: Table View Delegate
@@ -124,18 +143,21 @@ extension LayerManagerViewController: UITableViewDelegate {
         return 80.0
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //Update data source with selected state change.
+        
+        tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+    }
+    
     func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView //recast your view as a UITableViewHeaderFooterView
-        header.textLabel!.textColor = UIColor.whiteColor() //make the text white
+        header.textLabel!.textColor = UIColor(red: 6/255, green: 41/255, blue: 70/255, alpha: 1)
         header.textLabel!.font = UIFont.init(name: "Avenir-Book", size: 12.0)
         header.textLabel!.text = "OVERLAYS"
-        header.contentView.backgroundColor = .blackColor()
-        header.backgroundView!.alpha = 0.7
-    
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 55.0
+        return 35.0
     }
     
 }

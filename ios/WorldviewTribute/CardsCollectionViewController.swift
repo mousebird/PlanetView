@@ -64,6 +64,7 @@ class CardsCollectionViewController: UICollectionViewController {
         cell.layer.cornerRadius = 10
         cell.cardTableView.delegate = cell
         cell.cardTableView.dataSource = cell
+        cell.cardTableView.reloadData()
         
         // Fill in the title and the image from the card
         let cards = config.cardsForNthCategory(Int32(indexPath.section))
@@ -126,5 +127,13 @@ extension CardsCollectionViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
         return 24.0
+    }
+}
+
+extension CardsCollectionViewController: CardTableCellSelectionDelegate {
+    func cardTableCellWasSelected(indexPath: NSIndexPath) {
+        print("cell selected, delegate acting")
+        self.collectionView?.reloadData()
+        self.collectionView?.layoutSubviews()
     }
 }

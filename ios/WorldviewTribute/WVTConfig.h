@@ -31,6 +31,8 @@
 @property (readonly) bool baseLayer;
 /// Set from the layerOrder
 @property (assign) int drawPriority;
+/// Set by the layer manager if this is currently being displayed
+@property (assign) bool isDisplayed;
 
 /// Builds an object we can use to page with
 - (MaplyRemoteTileSource *)buildTileSource:(NSString *)dateString;

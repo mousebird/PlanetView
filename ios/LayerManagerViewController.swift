@@ -64,7 +64,8 @@ class LayerManagerViewController: UIViewController {
         config = WVTConfig.init(file: configName)
         globeViewC.config = config
         
-        self.testAdding()
+        // Add some defaults to get started
+        self.addDefaults()
     }
     
     @IBAction func onViewLayersBarButtonItemPressed(sender: AnyObject) {
@@ -107,7 +108,11 @@ class LayerManagerViewController: UIViewController {
         return UIStatusBarStyle.LightContent
     }
     
-    func testAdding() {
+    // Add a few defaults to get rolling
+    func addDefaults() {
+//        let layerManage = LayerManager()
+//        let layerManage:LayerManager = LayerManager.sharedManager(globeViewC,config)
+        
         let timeStr = "2016-04-20"
         let reflectLayer = config.findLayer("VIIRS_SNPP_CorrectedReflectance_BandsM11-I2-I1")
         globeViewC.addWVTLayer(reflectLayer, forTime:timeStr)

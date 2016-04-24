@@ -120,7 +120,16 @@ static LayerManager *theManager = nil;
 - (void)setDate:(SimpleDate *)inDate
 {
     date = inDate;
-    // Note: Refresh all the various layers
+    
+    // Work through the active layers, creating new ones as we go
+    for (WVTLayer *layer in activeLayers)
+    {
+        if (layer.isDisplayed)
+        {
+            [globeViewC removeWVTLayer:layer];
+            [globeViewC addWVTLayer:layer forTime:date.description];
+        }
+    }
 }
 
 - (SimpleDate *)getDate

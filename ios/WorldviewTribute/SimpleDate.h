@@ -18,4 +18,7 @@
 @property (assign) int month;
 @property (assign) int day;
 
+- (SimpleDate *)previousDay;
+- (SimpleDate *)nextDay;
+
 @end

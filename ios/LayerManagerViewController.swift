@@ -149,7 +149,7 @@ class LayerManagerViewController: UIViewController {
 
         let reflectLayer = config.findLayer("VIIRS_SNPP_CorrectedReflectance_BandsM11-I2-I1")
         layerManage.addLayer(reflectLayer)
-        let dustLayer = config.findLayer("AIRS_Dust_Score")
+        let dustLayer = config.findLayer("MODIS_Terra_Chlorophyll_A")
         layerManage.addLayer(dustLayer)
     }
     

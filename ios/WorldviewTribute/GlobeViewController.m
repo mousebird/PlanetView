@@ -66,6 +66,7 @@
         } else{
             wgLayer.coverPoles = false;
             wgLayer.handleEdges = false;
+            wgLayer.importanceScale = 1/16.0;
         }
         wgLayer.drawPriority = layer.drawPriority*100;
         localLayer.wgLayer = wgLayer;

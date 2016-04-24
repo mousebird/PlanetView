@@ -12,6 +12,8 @@ private let reuseIdentifier = "Cell"
 
 class CardsCollectionViewController: UICollectionViewController {
     
+
+    
     private let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 24.0)
     private let tvcReuseIdentifier = "layerItem1"
 

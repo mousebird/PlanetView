@@ -65,16 +65,16 @@
                                     </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOy-v8-Mmc">
                                         <rect key="frame" x="0.0" y="506" width="320" height="44"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="14"/>
-                                        <state key="normal" title="  ADD LAYERS" image="add_icon">
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
+                                        <state key="normal" title=" Add Layers" image="add_icon">
                                             <color key="titleColor" red="0.0" green="0.84463280439376831" blue="0.56919986009597778" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="Dtt-x4-cGL" kind="presentation" animates="NO" id="7bQ-6n-kmQ"/>
+                                            <segue destination="Dtt-x4-cGL" kind="show" id="7bQ-6n-kmQ"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k4f-GV-0mJ">
-                                        <rect key="frame" x="0.0" y="504" width="320" height="2"/>
+                                        <rect key="frame" x="0.0" y="503" width="320" height="2"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Active Layers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvw-0n-Dkr">
@@ -170,7 +170,7 @@
             </objects>
             <point key="canvasLocation" x="1216" y="311"/>
         </scene>
-        <!--Cards Collection View Controller-->
+        <!--Categories-->
         <scene sceneID="EfE-Jb-PCR">
             <objects>
                 <collectionViewController id="Dtt-x4-cGL" customClass="CardsCollectionViewController" customModule="WorldviewTribute" customModuleProvider="target" sceneMemberID="viewController">
@@ -186,13 +186,13 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="f0H-ph-bKL" customClass="CardsCollectionViewCell" customModule="WorldviewTribute">
-                                <rect key="frame" x="0.0" y="84" width="320" height="600"/>
+                                <rect key="frame" x="0.0" y="116" width="320" height="600"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c5Z-gn-a48">
+                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c5Z-gn-a48">
                                             <rect key="frame" x="0.0" y="169" width="320" height="431"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <prototypes>
@@ -200,7 +200,7 @@
                                                     <rect key="frame" x="0.0" y="28" width="320" height="80"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Img-KS-ivA" id="jXK-QC-TdO">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i54-QW-xy8">
@@ -230,6 +230,9 @@
                                                 </tableViewCell>
                                             </prototypes>
                                         </tableView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KPd-N9-d2T">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="169"/>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
@@ -245,6 +248,7 @@
                             <outlet property="delegate" destination="Dtt-x4-cGL" id="BSg-mg-lJM"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" title="Categories" id="eaP-I5-yW1"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LYl-Mu-Mco" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -258,6 +262,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6Gn-bK-k0I">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.0" green="0.84463280439376831" blue="0.56919986009597778" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="0.014963101595640182" green="0.15816113352775574" blue="0.27858108282089233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

@@ -135,7 +135,7 @@ static const bool UseSphericalMercatorHack = true;
         NSString *matrixSetSubst = [NSString stringWithFormat:@"GoogleMapsCompatible_Level%d",matrixSet.maxZoom];
         NSString *baseURL = [NSString stringWithFormat:@"http://map1.vis.earthdata.nasa.gov/wmts-webmerc/%@/default/%@/%@/{z}/{y}/{x}",self.name,timeStr,matrixSetSubst];
         
-        tileSource = [[MaplyRemoteTileSource alloc] initWithBaseURL:baseURL ext:ext minZoom:0 maxZoom:7];
+        tileSource = [[MaplyRemoteTileSource alloc] initWithBaseURL:baseURL ext:ext minZoom:0 maxZoom:matrixSet.maxZoom];
     } else {    
         // Note: Coordinate system is hardwired at the moment.  For shame!
         // This one is a little weird because it extends out past the valid boundaries

@@ -39,8 +39,10 @@
 // Test adding a couple of layers by name
 - (void)testAdding
 {
-    [globeViewC addLayerByName:@"MODIS_Terra_CorrectedReflectance_TrueColor"];
-    [globeViewC addLayerByName:@"MODIS_Terra_Aerosol"];
+    [globeViewC addLayerByName:@"VIIRS_SNPP_CorrectedReflectance_BandsM11-I2-I1"];
+//    [globeViewC addLayerByName:@"MODIS_Terra_CorrectedReflectance_TrueColor"];
+    [globeViewC addLayerByName:@"AIRS_Dust_Score"];
+//    [globeViewC addLayerByName:@"MODIS_Terra_Aerosol"];
 }
 
 @end

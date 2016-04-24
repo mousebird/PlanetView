@@ -201,24 +201,25 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="235"/>
                                         </imageView>
                                         <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c5Z-gn-a48">
-                                            <rect key="frame" x="0.0" y="169" width="320" height="422"/>
+                                            <rect key="frame" x="0.0" y="169" width="320" height="409"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <prototypes>
                                                 <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="subheader" rowHeight="35" id="sDa-ED-YIe" customClass="SubheaderTableViewCell" customModule="WorldviewTribute" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="28" width="320" height="35"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sDa-ED-YIe" id="TDR-z8-C8g">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="35"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="34.5"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5hW-kQ-uCz">
-                                                                <rect key="frame" x="12" y="13" width="293" height="21"/>
+                                                                <rect key="frame" x="15" y="13" width="290" height="21"/>
                                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
                                                                 <color key="textColor" red="0.014963101595640182" green="0.15816113352775574" blue="0.27858108282089233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
                                                     </tableViewCellContentView>
+                                                    <inset key="separatorInset" minX="12" minY="0.0" maxX="12" maxY="0.0"/>
                                                     <connections>
                                                         <outlet property="subheaderLabel" destination="5hW-kQ-uCz" id="pjg-QP-w8n"/>
                                                     </connections>
@@ -309,27 +310,27 @@
                                 <rect key="frame" x="70" y="50" width="948" height="693"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="orbit_lines" translatesAutoresizingMaskIntoConstraints="NO" id="rUd-vz-Eol">
-                                <rect key="frame" x="0.0" y="0.0" width="870" height="768"/>
+                                <rect key="frame" x="0.0" y="-8" width="870" height="768"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="allplanets" translatesAutoresizingMaskIntoConstraints="NO" id="aqg-Rl-dHW">
                                 <rect key="frame" x="0.0" y="170" width="912" height="427"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pointer_line" translatesAutoresizingMaskIntoConstraints="NO" id="Wtc-mj-rNR">
-                                <rect key="frame" x="304" y="253" width="2" height="100"/>
+                                <rect key="frame" x="304" y="253" width="1" height="91"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="suX-CR-Hde">
-                                <rect key="frame" x="217" y="199" width="176" height="69"/>
-                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
+                                <rect key="frame" x="217" y="185" width="176" height="69"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                 <state key="normal" title="Mars">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pointer_line" translatesAutoresizingMaskIntoConstraints="NO" id="exP-ZO-lEs">
-                                <rect key="frame" x="256" y="421" width="2" height="100"/>
+                                <rect key="frame" x="256" y="426" width="1" height="91"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBq-zf-bSc">
-                                <rect key="frame" x="169" y="508" width="176" height="69"/>
-                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
+                                <rect key="frame" x="169" y="516" width="176" height="69"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                 <state key="normal" title="Earth">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -343,9 +344,15 @@
                                     <segue destination="YUQ-WP-ose" kind="show" id="dZZ-Om-pfB"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PlanetView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2H-I9-rAe">
-                                <rect key="frame" x="649" y="576" width="251" height="50"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PlanetView" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2H-I9-rAe">
+                                <rect key="frame" x="661" y="557" width="251" height="50"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="36"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select a planet to explore" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGH-09-Jkx">
+                                <rect key="frame" x="661" y="605" width="251" height="50"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -367,7 +374,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Agh-sj-yyz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1116" y="310"/>
+            <point key="canvasLocation" x="-1166" y="290"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="c6P-Uy-Y3B">
@@ -405,7 +412,7 @@
         <image name="oval_selected" width="22" height="22"/>
         <image name="oval_selected_blue" width="22" height="23"/>
         <image name="oval_unselected" width="22" height="23"/>
-        <image name="pointer_line" width="2" height="100"/>
+        <image name="pointer_line" width="1" height="91"/>
         <image name="settings_icon" width="30" height="30"/>
         <image name="stars" width="948" height="693"/>
         <image name="white_fade" width="320" height="70"/>

@@ -18,29 +18,40 @@
     [super viewDidLoad];
     
     self.keepNorthUp = true;
-
-    // Note: This is just a test set of layers
-    [self addLayer:@"http://otile1.mqcdn.com/tiles/1.0.0/sat/" ext:@"jpg" baseLayer:true];
-    [self addLayer:@"http://map1.vis.earthdata.nasa.gov/wmts-webmerc/Sea_Surface_Temp_Blended/default/2015-06-25/GoogleMapsCompatible_Level7/{z}/{y}/{x}" ext:@"png" baseLayer:false];
     
     // Start over SF
     [self animateToPosition:MaplyCoordinateMakeWithDegrees(-122.416667, 37.783333) time:1.0];
 }
 
-// Add an image layer with URL and extension.
-- (void)addLayer:(NSString *)url ext:(NSString *)ext baseLayer:(bool)isBaseLayer
+// Look up the layer by name and parse out its various connection info
+- (void)addLayerByName:(NSString *)layerName
 {
-    MaplyRemoteTileSource *tileSource = [[MaplyRemoteTileSource alloc] initWithBaseURL:url ext:ext minZoom:0 maxZoom:7];
-    MaplyQuadImageTilesLayer *layer = [[MaplyQuadImageTilesLayer alloc] initWithTileSource:tileSource];
-    if (isBaseLayer)
+    // Get the layer
+    WVTLayer *layer = [_config findLayer:layerName];
+    if (!layer)
     {
-        layer.coverPoles = true;
-        layer.handleEdges = true;
-    } else{
-        layer.coverPoles = false;
-        layer.handleEdges = false;
+        NSLog(@"Failed to find layer %@",layerName);
+        return;
     }
-    [self addLayer:layer];
+    
+    MaplyRemoteTileSource *tileSource = [layer buildTileSource];
+    if (tileSource)
+    {
+        MaplyQuadImageTilesLayer *wgLayer = [[MaplyQuadImageTilesLayer alloc] initWithTileSource:tileSource];
+        wgLayer.flipY = true;
+        if (layer.baseLayer)
+        {
+            wgLayer.coverPoles = true;
+            wgLayer.handleEdges = true;
+        } else{
+            wgLayer.coverPoles = false;
+            wgLayer.handleEdges = false;
+        }
+        [self addLayer:wgLayer];
+    } else {
+        NSLog(@"Failed to build tile source for layer %@",layerName);
+        return;
+    }
 }
 
 /*

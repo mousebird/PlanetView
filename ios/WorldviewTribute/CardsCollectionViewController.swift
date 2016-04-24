@@ -109,6 +109,10 @@ extension CardsCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
         return sectionInsets
     }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return 24.0
+    }
 }
 
 
@@ -122,14 +126,31 @@ extension CardsCollectionViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(tvcReuseIdentifier, forIndexPath: indexPath) as! LayerItemCell
+        var cell = UITableViewCell()
         
-        //configure stuff
-        //Data source needs to include selected/unselected state
-        
-        cell.layerNameLabel.text = "Layer Title"
-        cell.layerDataSourceLabel.text = "SOURCES"
-        cell.backgroundColor = .clearColor()
+        if indexPath.row == 0 {
+            let acell = tableView.dequeueReusableCellWithIdentifier("subheader", forIndexPath: indexPath) as! SubheaderTableViewCell
+            
+            //configure stuff
+            //Data source needs to include selected/unselected state
+            
+            acell.subheaderLabel.text = "Layer Title"
+            acell.backgroundColor = .clearColor()
+            
+            cell = acell
+        } else {
+            let acell = tableView.dequeueReusableCellWithIdentifier(tvcReuseIdentifier, forIndexPath: indexPath) as! LayerItemCell
+            
+            //configure stuff
+            //Data source needs to include selected/unselected state
+            
+            acell.layerNameLabel.text = "Layer Title"
+            acell.layerDataSourceLabel.text = "SOURCES"
+            acell.backgroundColor = .clearColor()
+            
+            cell = acell
+            
+        }
         
         return cell
     }

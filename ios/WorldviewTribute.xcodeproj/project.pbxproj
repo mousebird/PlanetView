@@ -9,17 +9,16 @@
 /* Begin PBXBuildFile section */
 		2B965EBE1CCBF37B005B63DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B965EBD1CCBF37B005B63DB /* main.m */; };
 		2B965EC11CCBF37B005B63DB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B965EC01CCBF37B005B63DB /* AppDelegate.m */; };
-		2B965EC41CCBF37B005B63DB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B965EC31CCBF37B005B63DB /* ViewController.m */; };
 		2B965EC71CCBF37B005B63DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B965EC51CCBF37B005B63DB /* Main.storyboard */; };
 		2B965EC91CCBF37B005B63DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B965EC81CCBF37B005B63DB /* Assets.xcassets */; };
 		2B965ECC1CCBF37B005B63DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B965ECA1CCBF37B005B63DB /* LaunchScreen.storyboard */; };
 		2B965ED71CCBF37B005B63DB /* WorldviewTributeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B965ED61CCBF37B005B63DB /* WorldviewTributeTests.m */; };
 		2B965EE21CCBF37B005B63DB /* WorldviewTributeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B965EE11CCBF37B005B63DB /* WorldviewTributeUITests.m */; };
 		2B965EF11CCBF75B005B63DB /* GlobeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B965EF01CCBF75B005B63DB /* GlobeViewController.m */; };
-		6C7F4DE11CCC2BC600A6B67A /* LayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7F4DE01CCC2BC600A6B67A /* LayersViewController.swift */; };
 		2B965EF61CCBFD93005B63DB /* WVTConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B965EF51CCBFD93005B63DB /* WVTConfig.m */; };
 		2B965EF91CCBFEB3005B63DB /* wv.json in Resources */ = {isa = PBXBuildFile; fileRef = 2B965EF81CCBFEB3005B63DB /* wv.json */; };
 		2B965EFC1CCC2628005B63DB /* WMTSTileInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B965EFB1CCC2628005B63DB /* WMTSTileInfo.m */; };
+		6C632D851CCC5A0C00FD282A /* LayerManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C632D841CCC5A0C00FD282A /* LayerManagerViewController.swift */; };
 		A7F01896E032B145C9F87187 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E65CA3D55D4A177E965C9F89 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -45,8 +44,6 @@
 		2B965EBD1CCBF37B005B63DB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2B965EBF1CCBF37B005B63DB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2B965EC01CCBF37B005B63DB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2B965EC21CCBF37B005B63DB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		2B965EC31CCBF37B005B63DB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		2B965EC61CCBF37B005B63DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2B965EC81CCBF37B005B63DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B965ECB1CCBF37B005B63DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,13 +56,13 @@
 		2B965EE31CCBF37B005B63DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B965EEF1CCBF75B005B63DB /* GlobeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobeViewController.h; sourceTree = "<group>"; };
 		2B965EF01CCBF75B005B63DB /* GlobeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobeViewController.m; sourceTree = "<group>"; };
-		6C7F4DDF1CCC2BC600A6B67A /* WorldviewTribute-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WorldviewTribute-Bridging-Header.h"; sourceTree = "<group>"; };
-		6C7F4DE01CCC2BC600A6B67A /* LayersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayersViewController.swift; sourceTree = "<group>"; };
 		2B965EF41CCBFD93005B63DB /* WVTConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WVTConfig.h; sourceTree = "<group>"; };
 		2B965EF51CCBFD93005B63DB /* WVTConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WVTConfig.m; sourceTree = "<group>"; };
 		2B965EF81CCBFEB3005B63DB /* wv.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = wv.json; path = config/wv.json; sourceTree = SOURCE_ROOT; };
 		2B965EFA1CCC2628005B63DB /* WMTSTileInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMTSTileInfo.h; sourceTree = "<group>"; };
 		2B965EFB1CCC2628005B63DB /* WMTSTileInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMTSTileInfo.m; sourceTree = "<group>"; };
+		6C632D841CCC5A0C00FD282A /* LayerManagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LayerManagerViewController.swift; path = ../LayerManagerViewController.swift; sourceTree = "<group>"; };
+		6C7F4DDF1CCC2BC600A6B67A /* WorldviewTribute-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WorldviewTribute-Bridging-Header.h"; sourceTree = "<group>"; };
 		7C69A857C8CBC997D50ECEC7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		94FCEA118E90839C7A10863F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E65CA3D55D4A177E965C9F89 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,16 +122,14 @@
 				2B965EF71CCBFEA7005B63DB /* Config */,
 				2B965EBF1CCBF37B005B63DB /* AppDelegate.h */,
 				2B965EC01CCBF37B005B63DB /* AppDelegate.m */,
-				2B965EC21CCBF37B005B63DB /* ViewController.h */,
-				2B965EC31CCBF37B005B63DB /* ViewController.m */,
 				2B965EEF1CCBF75B005B63DB /* GlobeViewController.h */,
 				2B965EF01CCBF75B005B63DB /* GlobeViewController.m */,
+				6C632D841CCC5A0C00FD282A /* LayerManagerViewController.swift */,
 				2B965EFA1CCC2628005B63DB /* WMTSTileInfo.h */,
 				2B965EFB1CCC2628005B63DB /* WMTSTileInfo.m */,
 				2B965EF41CCBFD93005B63DB /* WVTConfig.h */,
 				2B965EF51CCBFD93005B63DB /* WVTConfig.m */,
 				2B965EC51CCBF37B005B63DB /* Main.storyboard */,
-				6C7F4DE01CCC2BC600A6B67A /* LayersViewController.swift */,
 				2B965EC81CCBF37B005B63DB /* Assets.xcassets */,
 				2B965ECA1CCBF37B005B63DB /* LaunchScreen.storyboard */,
 				2B965ECD1CCBF37B005B63DB /* Info.plist */,
@@ -379,10 +374,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B965EF11CCBF75B005B63DB /* GlobeViewController.m in Sources */,
+				6C632D851CCC5A0C00FD282A /* LayerManagerViewController.swift in Sources */,
 				2B965EF61CCBFD93005B63DB /* WVTConfig.m in Sources */,
-				2B965EC41CCBF37B005B63DB /* ViewController.m in Sources */,
 				2B965EC11CCBF37B005B63DB /* AppDelegate.m in Sources */,
-				6C7F4DE11CCC2BC600A6B67A /* LayersViewController.swift in Sources */,
 				2B965EFC1CCC2628005B63DB /* WMTSTileInfo.m in Sources */,
 				2B965EBE1CCBF37B005B63DB /* main.m in Sources */,
 			);

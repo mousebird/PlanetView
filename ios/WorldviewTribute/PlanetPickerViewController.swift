@@ -17,10 +17,12 @@ class PlanetPickerViewController: UIViewController {
     @IBOutlet weak var marsButton: UIButton!
     @IBOutlet weak var earthButton: UIButton!
     @IBOutlet weak var earthPlanetButton: UIButton!
+    @IBOutlet weak var starsImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        starsImageView.alpha = 0
         orbitLinesImageView.alpha = 0
         allPlanetsImageView.transform = CGAffineTransformMakeTranslation(-1500.0, 0.0)
         earthPointerLineImageView.alpha = 0
@@ -31,7 +33,8 @@ class PlanetPickerViewController: UIViewController {
 
         
         UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.8, options:
-        UIViewAnimationOptions.CurveEaseIn, animations: { 
+        UIViewAnimationOptions.CurveEaseIn, animations: {
+            self.starsImageView.alpha = 1
             self.allPlanetsImageView.transform = CGAffineTransformMakeTranslation(0.0, 0.0)
         }) { (finished: Bool) in
             UIView.animateWithDuration(0.5, animations: { 

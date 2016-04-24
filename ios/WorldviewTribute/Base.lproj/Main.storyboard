@@ -212,7 +212,7 @@
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5hW-kQ-uCz">
-                                                                <rect key="frame" x="8" y="13" width="299" height="21"/>
+                                                                <rect key="frame" x="12" y="13" width="293" height="21"/>
                                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
                                                                 <color key="textColor" red="0.014963101595640182" green="0.15816113352775574" blue="0.27858108282089233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -305,27 +305,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stars" translatesAutoresizingMaskIntoConstraints="NO" id="g4C-gA-ypK">
+                                <rect key="frame" x="70" y="50" width="948" height="693"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="orbit_lines" translatesAutoresizingMaskIntoConstraints="NO" id="rUd-vz-Eol">
-                                <rect key="frame" x="0.0" y="0.0" width="866" height="768"/>
+                                <rect key="frame" x="0.0" y="0.0" width="870" height="768"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="allplanets" translatesAutoresizingMaskIntoConstraints="NO" id="aqg-Rl-dHW">
-                                <rect key="frame" x="0.0" y="223" width="887" height="333"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pointer_line" translatesAutoresizingMaskIntoConstraints="NO" id="exP-ZO-lEs">
-                                <rect key="frame" x="255" y="421" width="2" height="100"/>
+                                <rect key="frame" x="0.0" y="170" width="912" height="427"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pointer_line" translatesAutoresizingMaskIntoConstraints="NO" id="Wtc-mj-rNR">
-                                <rect key="frame" x="305" y="263" width="2" height="100"/>
+                                <rect key="frame" x="304" y="253" width="2" height="100"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="suX-CR-Hde">
-                                <rect key="frame" x="218" y="209" width="176" height="69"/>
+                                <rect key="frame" x="217" y="199" width="176" height="69"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
                                 <state key="normal" title="Mars">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pointer_line" translatesAutoresizingMaskIntoConstraints="NO" id="exP-ZO-lEs">
+                                <rect key="frame" x="256" y="421" width="2" height="100"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBq-zf-bSc">
-                                <rect key="frame" x="168" y="508" width="176" height="69"/>
+                                <rect key="frame" x="169" y="508" width="176" height="69"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
                                 <state key="normal" title="Earth">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -335,11 +338,17 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mLZ-6B-Ibb">
-                                <rect key="frame" x="218" y="349" width="74" height="139"/>
+                                <rect key="frame" x="219" y="349" width="74" height="139"/>
                                 <connections>
                                     <segue destination="YUQ-WP-ose" kind="show" id="dZZ-Om-pfB"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PlanetView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2H-I9-rAe">
+                                <rect key="frame" x="649" y="576" width="251" height="50"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="36"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.014963101595640182" green="0.15816113352775574" blue="0.27858108282089233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -353,6 +362,7 @@
                         <outlet property="marsButton" destination="suX-CR-Hde" id="zCf-bh-yxB"/>
                         <outlet property="marsPointerLineImageView" destination="Wtc-mj-rNR" id="Vxk-Xl-AqK"/>
                         <outlet property="orbitLinesImageView" destination="rUd-vz-Eol" id="eLh-Hi-9WU"/>
+                        <outlet property="starsImageView" destination="g4C-gA-ypK" id="wE7-2b-qwm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Agh-sj-yyz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -382,7 +392,7 @@
     </scenes>
     <resources>
         <image name="add_icon_white" width="12" height="12"/>
-        <image name="allplanets" width="887" height="333"/>
+        <image name="allplanets" width="912" height="427"/>
         <image name="black_fade" width="320" height="70"/>
         <image name="camera_icon" width="30" height="30"/>
         <image name="caret_left" width="10" height="15"/>
@@ -391,12 +401,13 @@
         <image name="ice" width="372" height="277"/>
         <image name="info_icon" width="30" height="30"/>
         <image name="link_icon" width="30" height="30"/>
-        <image name="orbit_lines" width="866" height="768"/>
+        <image name="orbit_lines" width="870" height="768"/>
         <image name="oval_selected" width="22" height="22"/>
         <image name="oval_selected_blue" width="22" height="23"/>
         <image name="oval_unselected" width="22" height="23"/>
         <image name="pointer_line" width="2" height="100"/>
         <image name="settings_icon" width="30" height="30"/>
+        <image name="stars" width="948" height="693"/>
         <image name="white_fade" width="320" height="70"/>
     </resources>
     <inferredMetricsTieBreakers>

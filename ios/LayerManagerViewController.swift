@@ -19,6 +19,7 @@ class LayerManagerViewController: UIViewController {
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var dayLabel: UILabel!
+    @IBOutlet weak var settingsBarButtonItem: UIBarButtonItem!
 
     
     var globeViewC = GlobeViewController()
@@ -89,6 +90,11 @@ class LayerManagerViewController: UIViewController {
             })
         }
     }
+    
+    @IBAction func onSettingsBarButtonItemPressed(sender: AnyObject) {
+    dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let backItem = UIBarButtonItem()

@@ -35,7 +35,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="320" height="80"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b5M-fA-iEp" id="N3F-g4-POq">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9C-Cs-KVF">
@@ -141,6 +141,9 @@
                         <rightBarButtonItems>
                             <barButtonItem image="settings_icon" id="mdt-Np-all">
                                 <color key="tintColor" red="0.0" green="0.84463280439376831" blue="0.56919986009597778" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="onSettingsBarButtonItemPressed:" destination="BYZ-38-t0r" id="N1y-ZO-BAy"/>
+                                </connections>
                             </barButtonItem>
                             <barButtonItem image="info_icon" id="26h-10-dVi">
                                 <color key="tintColor" red="0.0" green="0.84463280439376831" blue="0.56919986009597778" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -163,6 +166,7 @@
                         <outlet property="leftDateButton" destination="GcZ-jK-ser" id="g4X-ZD-Vgk"/>
                         <outlet property="monthLabel" destination="eB8-kx-Lla" id="bjg-Ps-keW"/>
                         <outlet property="rightDateButton" destination="jRZ-Aa-bEq" id="eLO-WB-JyD"/>
+                        <outlet property="settingsBarButtonItem" destination="mdt-Np-all" id="evR-41-f2f"/>
                         <outlet property="viewLayersBarButtonItem" destination="N4K-8a-kPr" id="vrh-I0-aB2"/>
                         <outlet property="yearLabel" destination="JFk-v2-Gvn" id="T0f-Ak-86m"/>
                     </connections>
@@ -204,7 +208,7 @@
                                                     <rect key="frame" x="0.0" y="28" width="320" height="35"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sDa-ED-YIe" id="TDR-z8-C8g">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="34.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="35"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5hW-kQ-uCz">
@@ -223,7 +227,7 @@
                                                     <rect key="frame" x="0.0" y="63" width="320" height="80"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Img-KS-ivA" id="jXK-QC-TdO">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i54-QW-xy8">
@@ -272,6 +276,8 @@
                                 <color key="backgroundColor" red="0.0" green="0.84463280439376831" blue="0.56919986009597778" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <size key="customSize" width="320" height="600"/>
                                 <connections>
+                                    <outlet property="cardCategoryLabel" destination="DZH-Lg-SzS" id="yWo-bi-mPL"/>
+                                    <outlet property="cardImageView" destination="KPd-N9-d2T" id="rpz-Z6-dxU"/>
                                     <outlet property="cardTableView" destination="c5Z-gn-a48" id="nkv-cW-rgy"/>
                                 </connections>
                             </collectionViewCell>
@@ -299,6 +305,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="orbit_lines" translatesAutoresizingMaskIntoConstraints="NO" id="rUd-vz-Eol">
+                                <rect key="frame" x="0.0" y="0.0" width="866" height="768"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="allplanets" translatesAutoresizingMaskIntoConstraints="NO" id="aqg-Rl-dHW">
                                 <rect key="frame" x="0.0" y="223" width="887" height="333"/>
                             </imageView>
@@ -325,9 +334,12 @@
                                     <segue destination="YUQ-WP-ose" kind="show" animates="NO" id="E5M-Jx-n3m"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="orbit_lines" translatesAutoresizingMaskIntoConstraints="NO" id="rUd-vz-Eol">
-                                <rect key="frame" x="0.0" y="0.0" width="866" height="768"/>
-                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mLZ-6B-Ibb">
+                                <rect key="frame" x="218" y="349" width="74" height="139"/>
+                                <connections>
+                                    <segue destination="YUQ-WP-ose" kind="show" id="dZZ-Om-pfB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.014963101595640182" green="0.15816113352775574" blue="0.27858108282089233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -336,6 +348,7 @@
                     <connections>
                         <outlet property="allPlanetsImageView" destination="aqg-Rl-dHW" id="zyP-eF-egG"/>
                         <outlet property="earthButton" destination="VBq-zf-bSc" id="ZFx-Y4-etI"/>
+                        <outlet property="earthPlanetButton" destination="mLZ-6B-Ibb" id="jaf-hy-mLK"/>
                         <outlet property="earthPointerLineImageView" destination="exP-ZO-lEs" id="Z1n-oX-BTU"/>
                         <outlet property="marsButton" destination="suX-CR-Hde" id="zCf-bh-yxB"/>
                         <outlet property="marsPointerLineImageView" destination="Wtc-mj-rNR" id="Vxk-Xl-AqK"/>
@@ -386,4 +399,7 @@
         <image name="settings_icon" width="30" height="30"/>
         <image name="white_fade" width="320" height="70"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="dZZ-Om-pfB"/>
+    </inferredMetricsTieBreakers>
 </document>

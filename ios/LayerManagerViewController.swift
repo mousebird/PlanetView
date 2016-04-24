@@ -15,6 +15,11 @@ class LayerManagerViewController: UIViewController {
     @IBOutlet weak var datePickerView: UIView!
     @IBOutlet weak var leftDateButton: UIButton!
     @IBOutlet weak var rightDateButton: UIButton!
+    @IBOutlet weak var layersTableView: UITableView!
+    @IBOutlet weak var yearLabel: UILabel!
+    @IBOutlet weak var monthLabel: UILabel!
+    @IBOutlet weak var dayLabel: UILabel!
+
     
     var globeViewC = GlobeViewController()
     var config = WVTConfig()
@@ -84,4 +89,52 @@ class LayerManagerViewController: UIViewController {
         globeViewC.addLayerByName("AIRS_Dust_Score")
         //globeViewC.addLayerByName("MODIS_Terra_Aerosol")
     }
+    
+    
+}
+
+//MARK: Table View Data Source
+extension LayerManagerViewController: UITableViewDataSource {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("layerItem") as! LayerItemCell
+        
+        //configure stuff
+        
+        cell.layerNameLabel.text = "AAAAAAAAAAA"
+        cell.layerDataSourceLabel.text = "SOURCES"
+        cell.backgroundColor = .clearColor()
+        
+        
+        return cell
+    }
+}
+
+//MARK: Table View Delegate
+extension LayerManagerViewController: UITableViewDelegate {
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 80.0
+    }
+    
+    func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView //recast your view as a UITableViewHeaderFooterView
+        header.textLabel!.textColor = UIColor.whiteColor() //make the text white
+        header.textLabel!.font = UIFont.init(name: "Avenir-Book", size: 12.0)
+        header.textLabel!.text = "OVERLAYS"
+        header.contentView.backgroundColor = .blackColor()
+        header.backgroundView!.alpha = 0.7
+    
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 55.0
+    }
+    
 }

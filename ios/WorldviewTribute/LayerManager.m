@@ -8,25 +8,6 @@
 
 #import "LayerManager.h"
 
-@implementation SimpleDate
-
-- (id)initWithYear:(int)year month:(int)month day:(int)day
-{
-    self = [super init];
-    _year = year;
-    _month = month;
-    _day = day;
-    
-    return self;
-}
-
-- (NSString *)description
-{
-    return [NSString stringWithFormat:@"%4d-%2d-%2d",_year,_month,_day];
-}
-
-@end
-
 @implementation LayerManager
 {
     GlobeViewController *globeViewC;
@@ -35,7 +16,7 @@
     SimpleDate *date;
 }
 
-+ (LayerManager *)sharedManager:(GlobeViewController *)globeViewC config:(WVTConfig *)config;
++ (LayerManager *)sharedLayerManager:(GlobeViewController *)globeViewC config:(WVTConfig *)config
 {
     static LayerManager *theManager = nil;
     static dispatch_once_t onceToken;
@@ -45,6 +26,11 @@
                            theManager = [[self alloc] initWithGlobe:globeViewC config:config];
                    });
     return theManager;
+}
+
+- (id)init
+{
+    return nil;
 }
 
 - (id)initWithGlobe:(GlobeViewController *)inGlobeViewC config:(WVTConfig *)inConfig

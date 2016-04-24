@@ -7,24 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <WhirlyGlobeComponent.h>
 #import "GlobeViewController.h"
 #import "WVTConfig.h"
-
-// Simple date as Worldview sees it
-@interface SimpleDate : NSObject
-
-- (id)initWithYear:(int)year month:(int)month day:(int)day;
-
-@property (assign) int year;
-@property (assign) int month;
-@property (assign) int day;
-
-@end
+#import "SimpleDate.h"
 
 /// Manages overall layer display
 @interface LayerManager : NSObject
 
-+ (LayerManager *)sharedManager:(GlobeViewController *)globeViewC config:(WVTConfig *)config;
++ (LayerManager *)sharedLayerManager:(GlobeViewController *)globeViewC config:(WVTConfig *)config;
+
+- (id)init;
 
 - (id)initWithGlobe:(GlobeViewController *)globeViewC config:(WVTConfig *)config;
 

@@ -24,6 +24,7 @@ class LayerManagerViewController: UIViewController {
     
     var globeViewC = GlobeViewController()
     var config = WVTConfig()
+//    var LayerManager = LayerManager()
     
     override func viewDidLoad() {
         
@@ -110,14 +111,13 @@ class LayerManagerViewController: UIViewController {
     
     // Add a few defaults to get rolling
     func addDefaults() {
-//        let layerManage = LayerManager()
-//        let layerManage:LayerManager = LayerManager.sharedManager(globeViewC,config)
-        
-        let timeStr = "2016-04-20"
+        let layerManage = LayerManager.sharedLayerManager(globeViewC,config: config) as LayerManager
+
+//        let timeStr = "2016-04-20"
         let reflectLayer = config.findLayer("VIIRS_SNPP_CorrectedReflectance_BandsM11-I2-I1")
-        globeViewC.addWVTLayer(reflectLayer, forTime:timeStr)
+        layerManage.addLayer(reflectLayer)
         let dustLayer = config.findLayer("AIRS_Dust_Score")
-        globeViewC.addWVTLayer(dustLayer, forTime:timeStr)
+        layerManage.addLayer(dustLayer)
     }
     
     

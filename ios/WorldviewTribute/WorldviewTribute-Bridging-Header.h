@@ -4,3 +4,4 @@
 
 #import "GlobeViewController.h"
 #import "WVTConfig.h"
+#import "LayerManager.h"

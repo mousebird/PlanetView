@@ -13,6 +13,13 @@ class LayerManagerViewController: UIViewController {
     @IBOutlet weak var viewLayersBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var layerManagerView: UIView!
     @IBOutlet weak var datePickerView: UIView!
+    @IBOutlet weak var leftDateButton: UIButton!
+    @IBOutlet weak var rightDateButton: UIButton!
+    @IBOutlet weak var layersTableView: UITableView!
+    @IBOutlet weak var yearLabel: UILabel!
+    @IBOutlet weak var monthLabel: UILabel!
+    @IBOutlet weak var dayLabel: UILabel!
+
     
     var globeViewC = GlobeViewController()
     var config = WVTConfig()
@@ -36,9 +43,8 @@ class LayerManagerViewController: UIViewController {
         layerManagerView.layer.cornerRadius = 10
         datePickerView.layer.cornerRadius = 10
         
-        // Style the bar button items
-        viewLayersBarButtonItem.setTitleTextAttributes([ NSFontAttributeName: UIFont(name: "Avenir-heavy", size: 14)!], forState: UIControlState.Normal)
-
+        // Style the bar button item
+        viewLayersBarButtonItem.setTitleTextAttributes([ NSFontAttributeName:UIFont(name: "Avenir-heavy", size: 14)!], forState: UIControlState.Normal)
         
         // Configuration file for the UI
         let configName = NSBundle.mainBundle().pathForResource("wv", ofType: "json")
@@ -49,7 +55,27 @@ class LayerManagerViewController: UIViewController {
     }
     
     @IBAction func onViewLayersBarButtonItemPressed(sender: AnyObject) {
-        layerManagerView.alpha = 1
+        if layerManagerView.frame.origin.y == 76 {
+            self.viewLayersBarButtonItem.title = "View Layers"
+            UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.8, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                self.layerManagerView.transform = CGAffineTransformMakeTranslation(0.0, -800.0)
+                self.datePickerView.transform = CGAffineTransformMakeTranslation(0.0, -800.0)
+                self.layerManagerView.alpha = 0
+                self.datePickerView.alpha = 0
+                }, completion: { (finished: Bool) in
+                //
+            })
+        } else {
+            self.viewLayersBarButtonItem.title = "Hide Layers"
+            UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.8, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+                self.layerManagerView.transform = CGAffineTransformMakeTranslation(0.0, 0.0)
+                self.datePickerView.transform = CGAffineTransformMakeTranslation(0.0, 0.0)
+                self.layerManagerView.alpha = 1
+                self.datePickerView.alpha = 1
+                }, completion: { (finished: Bool) in
+                    //
+            })
+        }
     }
     
     // turn the status bar white
@@ -64,4 +90,52 @@ class LayerManagerViewController: UIViewController {
         let dustLayer = config.findLayer("AIRS_Dust_Score")
         globeViewC.addWVTLayer(dustLayer, forTime:timeStr)
     }
+    
+    
+}
+
+//MARK: Table View Data Source
+extension LayerManagerViewController: UITableViewDataSource {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("layerItem") as! LayerItemCell
+        
+        //configure stuff
+        
+        cell.layerNameLabel.text = "AAAAAAAAAAA"
+        cell.layerDataSourceLabel.text = "SOURCES"
+        cell.backgroundColor = .clearColor()
+        
+        
+        return cell
+    }
+}
+
+//MARK: Table View Delegate
+extension LayerManagerViewController: UITableViewDelegate {
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 80.0
+    }
+    
+    func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView //recast your view as a UITableViewHeaderFooterView
+        header.textLabel!.textColor = UIColor.whiteColor() //make the text white
+        header.textLabel!.font = UIFont.init(name: "Avenir-Book", size: 12.0)
+        header.textLabel!.text = "OVERLAYS"
+        header.contentView.backgroundColor = .blackColor()
+        header.backgroundView!.alpha = 0.7
+    
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 55.0
+    }
+    
 }

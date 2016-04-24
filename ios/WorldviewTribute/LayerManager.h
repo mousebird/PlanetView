@@ -16,6 +16,7 @@
 @interface LayerManager : NSObject
 
 + (LayerManager *)sharedLayerManager:(GlobeViewController *)globeViewC config:(WVTConfig *)config;
++ (LayerManager *)sharedLayerManager;
 
 - (id)init;
 

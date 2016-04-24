@@ -16,15 +16,21 @@
     SimpleDate *date;
 }
 
+static LayerManager *theManager = nil;
+
 + (LayerManager *)sharedLayerManager:(GlobeViewController *)globeViewC config:(WVTConfig *)config
 {
-    static LayerManager *theManager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken,
                    ^{
                        if (globeViewC)
                            theManager = [[self alloc] initWithGlobe:globeViewC config:config];
                    });
+    return theManager;
+}
+
++ (LayerManager *)sharedLayerManager
+{
     return theManager;
 }
 
@@ -48,7 +54,10 @@
 - (void)addLayer:(WVTLayer *)layer
 {
     if (![activeLayers containsObject:layer])
+    {
+        layer.isActive = true;
         [activeLayers addObject:layer];
+    }
     
     if (!layer.isDisplayed)
     {
@@ -61,7 +70,10 @@
 - (void)removeLayer:(WVTLayer *)layer
 {
     if ([activeLayers containsObject:layer])
+    {
+        layer.isActive = false;
         [activeLayers removeObject:layer];
+    }
     
     if (layer.isDisplayed)
     {

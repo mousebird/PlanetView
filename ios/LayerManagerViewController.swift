@@ -68,6 +68,10 @@ class LayerManagerViewController: UIViewController {
         self.addDefaults()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        layersTableView.reloadData()
+    }
+    
     @IBAction func onViewLayersBarButtonItemPressed(sender: AnyObject) {
         if layerManagerView.frame.origin.y == 76 {
             self.viewLayersBarButtonItem.title = "View Layers"

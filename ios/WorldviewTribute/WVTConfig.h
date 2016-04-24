@@ -33,6 +33,8 @@
 @property (assign) int drawPriority;
 /// Set by the layer manager if this is currently being displayed
 @property (assign) bool isDisplayed;
+/// Set if the layer is even in the layer list
+@property (assign) bool isActive;
 
 /// Builds an object we can use to page with
 - (MaplyRemoteTileSource *)buildTileSource:(NSString *)dateString;

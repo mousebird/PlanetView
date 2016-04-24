@@ -62,6 +62,7 @@ class CardsCollectionViewController: UICollectionViewController {
         // Configure the cell
         cell.backgroundColor = .whiteColor()
         cell.layer.cornerRadius = 10
+        cell.delegate = self
         cell.cardTableView.delegate = cell
         cell.cardTableView.dataSource = cell
         

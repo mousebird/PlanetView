@@ -75,6 +75,7 @@ class CardsCollectionViewCell: UICollectionViewCell, UITableViewDelegate, UITabl
             cell.layerNameLabel.text = layer.title
             cell.layerDataSourceLabel.text = layer.subtitle
             cell.backgroundColor = .clearColor()
+            cell.layerItemVisibilityButton.selected = layer.isActive;
             
             return cell
         }
@@ -83,8 +84,23 @@ class CardsCollectionViewCell: UICollectionViewCell, UITableViewDelegate, UITabl
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("cell selected")
-        delegate?.cardTableCellWasSelected(indexPath)
+        // The cell might be a source or a layer
+        let measurement = card.displayMeasures[indexPath.section] as! WVTDisplayMeasurement
+        let entry = measurement.sourcesAndLayers[indexPath.row]
+        
+        if (entry.isKindOfClass(WVTLayer))
+        {
+            let layer = entry as! WVTLayer
+            let layerManage = LayerManager.sharedLayerManager() as LayerManager
+            if (layer.isActive)
+            {
+                layerManage.removeLayer(layer)
+            } else {
+                layerManage.addLayer(layer)
+            }
+            
+            delegate?.cardTableCellWasSelected(indexPath)
+        }
     }
 
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {

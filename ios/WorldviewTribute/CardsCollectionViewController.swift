@@ -64,7 +64,6 @@ class CardsCollectionViewController: UICollectionViewController {
         cell.layer.cornerRadius = 10
         cell.cardTableView.delegate = cell
         cell.cardTableView.dataSource = cell
-        cell.cardTableView.reloadData()
         
         // Fill in the title and the image from the card
         let cards = config.cardsForNthCategory(Int32(indexPath.section))

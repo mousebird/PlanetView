@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol CardTableCellSelectionDelegate {
+    func cardTableCellWasSelected(indexPath: NSIndexPath)
+}
+
+
 class CardsCollectionViewCell: UICollectionViewCell, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var cardTableView: UITableView!
     @IBOutlet weak var cardImageView: UIImageView!
@@ -16,6 +21,7 @@ class CardsCollectionViewCell: UICollectionViewCell, UITableViewDelegate, UITabl
     private let tvcReuseIdentifier = "layerItem1"
 
     var card = WVTDisplayCard()
+    var delegate:CardTableCellSelectionDelegate?
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return card.displayMeasures.count
@@ -58,6 +64,11 @@ class CardsCollectionViewCell: UICollectionViewCell, UITableViewDelegate, UITabl
         }
         
         //return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("cell selected")
+        delegate?.cardTableCellWasSelected(indexPath)
     }
 
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {

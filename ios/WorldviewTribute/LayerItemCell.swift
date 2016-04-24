@@ -13,7 +13,6 @@ class LayerItemCell: UITableViewCell {
     @IBOutlet weak var layerItemVisibilityButton: UIButton!
     @IBOutlet weak var layerNameLabel: UILabel!
     @IBOutlet weak var layerDataSourceLabel: UILabel!
-    @IBOutlet weak var layerItemDismissButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

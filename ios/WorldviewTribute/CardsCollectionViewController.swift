@@ -12,9 +12,7 @@ private let reuseIdentifier = "Cell"
 
 class CardsCollectionViewController: UICollectionViewController {
     
-
-    
-    private let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 24.0)
+    private let sectionInsets = UIEdgeInsets(top: 50.0, left: 50.0, bottom: 50.0, right: 50.0)
     private let tvcReuseIdentifier = "layerItem1"
 
     override func viewDidLoad() {
@@ -61,7 +59,8 @@ class CardsCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! CardsCollectionViewCell
     
         // Configure the cell
-        cell.backgroundColor = .redColor()
+        cell.backgroundColor = .whiteColor()
+        cell.layer.cornerRadius = 10
         cell.cardTableView.delegate = self
         cell.cardTableView.dataSource = self
         
@@ -103,7 +102,7 @@ class CardsCollectionViewController: UICollectionViewController {
 
 extension CardsCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSize(width: 320, height: 550)
+        return CGSize(width: 320, height: 600)
         
     }
     
@@ -143,12 +142,9 @@ extension CardsCollectionViewController: UITableViewDelegate {
     
     func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView //recast your view as a UITableViewHeaderFooterView
-        header.textLabel!.textColor = UIColor.whiteColor() //make the text white
+        header.textLabel!.textColor = UIColor(red: 6/255, green: 41/255, blue: 70/255, alpha: 1)
         header.textLabel!.font = UIFont.init(name: "Avenir-Book", size: 12.0)
         header.textLabel!.text = "OVERLAYS"
-        header.contentView.backgroundColor = .blackColor()
-        header.contentView.alpha = 0.8
-        
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

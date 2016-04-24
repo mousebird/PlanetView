@@ -43,6 +43,18 @@ class LayerManagerViewController: UIViewController {
         layerManagerView.layer.cornerRadius = 10
         datePickerView.layer.cornerRadius = 10
         
+        //animate in the Layers
+        layerManagerView.transform = CGAffineTransformMakeTranslation(0.0, -800.0)
+        datePickerView.transform = CGAffineTransformMakeTranslation(0.0, -800.0)
+        UIView.animateWithDuration(0.5, delay: 0.6, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.8, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+            self.layerManagerView.transform = CGAffineTransformMakeTranslation(0.0, 0.0)
+            self.datePickerView.transform = CGAffineTransformMakeTranslation(0.0, 0.0)
+            self.layerManagerView.alpha = 1
+            self.datePickerView.alpha = 1
+            }, completion: { (finished: Bool) in
+                //
+        })
+
         // Style the navigation bar and bar button items
         viewLayersBarButtonItem.setTitleTextAttributes([ NSFontAttributeName:UIFont(name: "Avenir-heavy", size: 14)!], forState: UIControlState.Normal)
         

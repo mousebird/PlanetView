@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YUQ-WP-ose">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DHS-gx-FCv">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -21,6 +21,12 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pkP-Jg-opY">
                                 <rect key="frame" x="12" y="76" width="320" height="550"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Active Layers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvw-0n-Dkr">
+                                        <rect key="frame" x="77" y="17" width="166" height="22"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="w96-zp-tML">
                                         <rect key="frame" x="0.0" y="58" width="320" height="448"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -38,19 +44,20 @@
                                                             <state key="selected" image="oval_selected_blue" backgroundImage="oval_selected"/>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dp-ID-Zs1">
-                                                            <rect key="frame" x="54" y="17" width="222" height="21"/>
+                                                            <rect key="frame" x="54" y="17" width="240" height="21"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="14"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9zz-M9-9Np">
-                                                            <rect key="frame" x="54" y="41" width="222" height="21"/>
+                                                            <rect key="frame" x="54" y="41" width="240" height="21"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </tableViewCellContentView>
+                                                <inset key="separatorInset" minX="12" minY="0.0" maxX="12" maxY="0.0"/>
                                                 <connections>
                                                     <outlet property="layerDataSourceLabel" destination="9zz-M9-9Np" id="EHD-hm-PZj"/>
                                                     <outlet property="layerItemVisibilityButton" destination="d9C-Cs-KVF" id="N4W-QQ-i3N"/>
@@ -63,38 +70,26 @@
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="Cez-Ls-eza"/>
                                         </connections>
                                     </tableView>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k4f-GV-0mJ">
+                                        <rect key="frame" x="0.0" y="506" width="320" height="44"/>
+                                        <color key="backgroundColor" red="0.0" green="0.84463280439376831" blue="0.56919986009597778" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOy-v8-Mmc">
                                         <rect key="frame" x="0.0" y="506" width="320" height="44"/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
-                                        <state key="normal" title=" Add Layers" image="add_icon">
-                                            <color key="titleColor" red="0.0" green="0.84463280439376831" blue="0.56919986009597778" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title=" Add Layers" image="add_icon_white">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <segue destination="Dtt-x4-cGL" kind="show" id="7bQ-6n-kmQ"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k4f-GV-0mJ">
-                                        <rect key="frame" x="0.0" y="503" width="320" height="2"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Active Layers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvw-0n-Dkr">
-                                        <rect key="frame" x="77" y="17" width="166" height="22"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qrB-mt-AIX">
                                 <rect key="frame" x="12" y="638" width="320" height="118"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPB-PL-ags">
-                                        <rect key="frame" x="12" y="18" width="166" height="25"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="date_rectangles" translatesAutoresizingMaskIntoConstraints="NO" id="TRA-rJ-mN0">
                                         <rect key="frame" x="42" y="56" width="236" height="42"/>
                                     </imageView>
@@ -120,6 +115,12 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2016" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JFk-v2-Gvn">
                                         <rect key="frame" x="42" y="67" width="92" height="21"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPB-PL-ags">
+                                        <rect key="frame" x="77" y="18" width="166" height="25"/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -168,7 +169,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1216" y="311"/>
+            <point key="canvasLocation" x="1216" y="310"/>
         </scene>
         <!--Categories-->
         <scene sceneID="EfE-Jb-PCR">
@@ -192,15 +193,18 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c5Z-gn-a48">
-                                            <rect key="frame" x="0.0" y="169" width="320" height="431"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ice" translatesAutoresizingMaskIntoConstraints="NO" id="KPd-N9-d2T">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="235"/>
+                                        </imageView>
+                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c5Z-gn-a48">
+                                            <rect key="frame" x="0.0" y="169" width="320" height="422"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <prototypes>
                                                 <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="layerItem" selectionStyle="default" indentationWidth="10" reuseIdentifier="layerItem1" rowHeight="80" id="Img-KS-ivA" customClass="LayerItemCell" customModule="WorldviewTribute" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="28" width="320" height="80"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Img-KS-ivA" id="jXK-QC-TdO">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i54-QW-xy8">
@@ -209,19 +213,20 @@
                                                                 <state key="selected" image="oval_selected"/>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8t5-hR-l80">
-                                                                <rect key="frame" x="54" y="17" width="222" height="21"/>
+                                                                <rect key="frame" x="54" y="17" width="248" height="21"/>
                                                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="14"/>
-                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <color key="textColor" red="0.014963101595640182" green="0.15816113352775574" blue="0.27858108282089233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xwu-gI-xAo">
-                                                                <rect key="frame" x="54" y="41" width="222" height="21"/>
+                                                                <rect key="frame" x="54" y="41" width="248" height="21"/>
                                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
-                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <color key="textColor" red="0.014963101595640182" green="0.15816113352775574" blue="0.27858108282089233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
                                                     </tableViewCellContentView>
+                                                    <inset key="separatorInset" minX="12" minY="0.0" maxX="12" maxY="0.0"/>
                                                     <connections>
                                                         <outlet property="layerDataSourceLabel" destination="Xwu-gI-xAo" id="OMn-Ez-wOm"/>
                                                         <outlet property="layerItemVisibilityButton" destination="i54-QW-xy8" id="MLt-69-Ag8"/>
@@ -230,9 +235,18 @@
                                                 </tableViewCell>
                                             </prototypes>
                                         </tableView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KPd-N9-d2T">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="169"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="white_fade" translatesAutoresizingMaskIntoConstraints="NO" id="6T4-vz-ZW6">
+                                            <rect key="frame" x="0.0" y="530" width="320" height="70"/>
                                         </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="black_fade" translatesAutoresizingMaskIntoConstraints="NO" id="Rae-zZ-uFP">
+                                            <rect key="frame" x="0.0" y="100" width="320" height="70"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Air Quality" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZH-Lg-SzS">
+                                            <rect key="frame" x="18" y="136" width="291" height="21"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
@@ -254,6 +268,65 @@
             </objects>
             <point key="canvasLocation" x="1216" y="1322"/>
         </scene>
+        <!--Planet Picker View Controller-->
+        <scene sceneID="2ZE-HM-GzS">
+            <objects>
+                <viewController id="DHS-gx-FCv" customClass="PlanetPickerViewController" customModule="WorldviewTribute" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Zb6-nv-Eu0"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vxq-Nh-beb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dXa-cc-ffe">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="allplanets" translatesAutoresizingMaskIntoConstraints="NO" id="aqg-Rl-dHW">
+                                <rect key="frame" x="0.0" y="223" width="887" height="333"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pointer_line" translatesAutoresizingMaskIntoConstraints="NO" id="exP-ZO-lEs">
+                                <rect key="frame" x="255" y="421" width="2" height="100"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pointer_line" translatesAutoresizingMaskIntoConstraints="NO" id="Wtc-mj-rNR">
+                                <rect key="frame" x="305" y="263" width="2" height="100"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="suX-CR-Hde">
+                                <rect key="frame" x="218" y="209" width="176" height="69"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
+                                <state key="normal" title="Mars">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBq-zf-bSc">
+                                <rect key="frame" x="168" y="508" width="176" height="69"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
+                                <state key="normal" title="Earth">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="YUQ-WP-ose" kind="show" animates="NO" id="E5M-Jx-n3m"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="orbit_lines" translatesAutoresizingMaskIntoConstraints="NO" id="rUd-vz-Eol">
+                                <rect key="frame" x="0.0" y="0.0" width="866" height="768"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.014963101595640182" green="0.15816113352775574" blue="0.27858108282089233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <connections>
+                        <outlet property="allPlanetsImageView" destination="aqg-Rl-dHW" id="zyP-eF-egG"/>
+                        <outlet property="earthButton" destination="VBq-zf-bSc" id="ZFx-Y4-etI"/>
+                        <outlet property="earthPointerLineImageView" destination="exP-ZO-lEs" id="Z1n-oX-BTU"/>
+                        <outlet property="marsButton" destination="suX-CR-Hde" id="zCf-bh-yxB"/>
+                        <outlet property="marsPointerLineImageView" destination="Wtc-mj-rNR" id="Vxk-Xl-AqK"/>
+                        <outlet property="orbitLinesImageView" destination="rUd-vz-Eol" id="eLh-Hi-9WU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Agh-sj-yyz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1116" y="310"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="c6P-Uy-Y3B">
             <objects>
@@ -272,20 +345,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S5Y-e3-yd2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="297" y="227"/>
+            <point key="canvasLocation" x="10" y="310"/>
         </scene>
     </scenes>
     <resources>
-        <image name="add_icon" width="12" height="12"/>
+        <image name="add_icon_white" width="12" height="12"/>
+        <image name="allplanets" width="887" height="333"/>
+        <image name="black_fade" width="320" height="70"/>
         <image name="camera_icon" width="30" height="30"/>
         <image name="caret_left" width="10" height="15"/>
         <image name="caret_right" width="9" height="15"/>
         <image name="date_rectangles" width="236" height="42"/>
+        <image name="ice" width="372" height="277"/>
         <image name="info_icon" width="30" height="30"/>
         <image name="link_icon" width="30" height="30"/>
+        <image name="orbit_lines" width="866" height="768"/>
         <image name="oval_selected" width="22" height="22"/>
         <image name="oval_selected_blue" width="22" height="23"/>
         <image name="oval_unselected" width="22" height="23"/>
+        <image name="pointer_line" width="2" height="100"/>
         <image name="settings_icon" width="30" height="30"/>
+        <image name="white_fade" width="320" height="70"/>
     </resources>
 </document>

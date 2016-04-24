@@ -16,10 +16,10 @@
 		2B965ED71CCBF37B005B63DB /* WorldviewTributeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B965ED61CCBF37B005B63DB /* WorldviewTributeTests.m */; };
 		2B965EE21CCBF37B005B63DB /* WorldviewTributeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B965EE11CCBF37B005B63DB /* WorldviewTributeUITests.m */; };
 		2B965EF11CCBF75B005B63DB /* GlobeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B965EF01CCBF75B005B63DB /* GlobeViewController.m */; };
-		6C7F4DE11CCC2BC600A6B67A /* LayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7F4DE01CCC2BC600A6B67A /* LayersViewController.swift */; };
 		2B965EF61CCBFD93005B63DB /* WVTConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B965EF51CCBFD93005B63DB /* WVTConfig.m */; };
 		2B965EF91CCBFEB3005B63DB /* wv.json in Resources */ = {isa = PBXBuildFile; fileRef = 2B965EF81CCBFEB3005B63DB /* wv.json */; };
 		2B965EFC1CCC2628005B63DB /* WMTSTileInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B965EFB1CCC2628005B63DB /* WMTSTileInfo.m */; };
+		6C7F4DE11CCC2BC600A6B67A /* LayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7F4DE01CCC2BC600A6B67A /* LayersViewController.swift */; };
 		A7F01896E032B145C9F87187 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E65CA3D55D4A177E965C9F89 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -59,13 +59,13 @@
 		2B965EE31CCBF37B005B63DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B965EEF1CCBF75B005B63DB /* GlobeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobeViewController.h; sourceTree = "<group>"; };
 		2B965EF01CCBF75B005B63DB /* GlobeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobeViewController.m; sourceTree = "<group>"; };
-		6C7F4DDF1CCC2BC600A6B67A /* WorldviewTribute-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WorldviewTribute-Bridging-Header.h"; sourceTree = "<group>"; };
-		6C7F4DE01CCC2BC600A6B67A /* LayersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayersViewController.swift; sourceTree = "<group>"; };
 		2B965EF41CCBFD93005B63DB /* WVTConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WVTConfig.h; sourceTree = "<group>"; };
 		2B965EF51CCBFD93005B63DB /* WVTConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WVTConfig.m; sourceTree = "<group>"; };
 		2B965EF81CCBFEB3005B63DB /* wv.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = wv.json; path = config/wv.json; sourceTree = SOURCE_ROOT; };
 		2B965EFA1CCC2628005B63DB /* WMTSTileInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMTSTileInfo.h; sourceTree = "<group>"; };
 		2B965EFB1CCC2628005B63DB /* WMTSTileInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMTSTileInfo.m; sourceTree = "<group>"; };
+		6C7F4DDF1CCC2BC600A6B67A /* WorldviewTribute-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WorldviewTribute-Bridging-Header.h"; sourceTree = "<group>"; };
+		6C7F4DE01CCC2BC600A6B67A /* LayersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayersViewController.swift; sourceTree = "<group>"; };
 		7C69A857C8CBC997D50ECEC7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		94FCEA118E90839C7A10863F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E65CA3D55D4A177E965C9F89 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -265,7 +265,7 @@
 				TargetAttributes = {
 					2B965EB81CCBF37B005B63DB = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 2CQJ4ESN4E;
+						DevelopmentTeam = BFXSGS6V8N;
 					};
 					2B965ED11CCBF37B005B63DB = {
 						CreatedOnToolsVersion = 7.3;

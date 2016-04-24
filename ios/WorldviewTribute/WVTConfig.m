@@ -33,7 +33,7 @@
     NSArray *res = dict[@"resolutions"];
     if (![res isKindOfClass:[NSArray class]])
         return nil;
-    _maxZoom = [res count];
+    _maxZoom = (int)[res count];
     
     // Note: Don't hardwire this
     _pixelsPerTile = 512;

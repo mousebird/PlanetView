@@ -33,7 +33,8 @@
     config = [[WVTConfig alloc] initWithFile:configName];
     globeViewC.config = config;
     
-    [self testAdding];
+//    [self testAdding];
+    [self testCategory];
 }
 
 // Test adding a couple of layers by name
@@ -43,6 +44,46 @@
 //    [globeViewC addLayerByName:@"MODIS_Terra_CorrectedReflectance_TrueColor"];
     [globeViewC addLayerByName:@"AIRS_Dust_Score"];
 //    [globeViewC addLayerByName:@"MODIS_Terra_Aerosol"];
+}
+
+- (void)testCategory
+{
+    // Look for the cards and then pick one
+    NSArray *cards = [config findCardsForCategory:@"hazards and disasters"];
+    WVTCard *card = [cards objectAtIndex:1];
+    
+    // Display some of the layers in this card
+    // There's some overlap in the layers
+    NSMutableSet *layers = [NSMutableSet set];
+    for (WVTMeasurement *measure in card.measurements)
+    {
+        for (WVTMeasurementSource *source in measure.sources)
+        {
+            for (WVTLayer *layer in source.layers)
+            {
+                [layers addObject:layer];
+                
+                break;
+            }
+            
+            break;
+        }
+    }
+    
+    // Add the base layers first
+    for (WVTLayer *layer in layers)
+    {
+        if (layer.baseLayer)
+        {
+            [globeViewC addLayerByName:layer.name];
+            break;
+        }
+    }
+    
+    // Then the overlays
+    for (WVTLayer *layer in layers)
+        if (!layer.baseLayer)
+            [globeViewC addLayerByName:layer.name];
 }
 
 @end

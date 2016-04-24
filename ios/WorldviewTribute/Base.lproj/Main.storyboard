@@ -343,6 +343,12 @@
                                     <segue destination="YUQ-WP-ose" kind="show" id="dZZ-Om-pfB"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PlanetView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2H-I9-rAe">
+                                <rect key="frame" x="649" y="576" width="251" height="50"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="36"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.014963101595640182" green="0.15816113352775574" blue="0.27858108282089233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>

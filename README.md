@@ -1,4 +1,4 @@
-# WorldviewTribute
+# PlanetView
 Worldview-like app for mobile (iOS)
 
 This app uses Cocoapods.  If you don't have that on your development machine, you'll need to [go get it](https://cocoapods.org/).
